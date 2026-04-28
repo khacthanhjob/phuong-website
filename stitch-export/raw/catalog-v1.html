@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Series &amp; Phases | The Curated Perspective</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#faf7f6",
+                    "tertiary-fixed": "#fddab2",
+                    "on-surface": "#2f3331",
+                    "secondary-fixed-dim": "#d5d4d4",
+                    "surface-variant": "#e0e3e0",
+                    "on-secondary": "#faf8f8",
+                    "error-container": "#fe8983",
+                    "primary-container": "#e5e2e1",
+                    "primary": "#5f5e5e",
+                    "on-background": "#2f3331",
+                    "inverse-on-surface": "#9d9d9b",
+                    "surface-container-highest": "#e0e3e0",
+                    "on-tertiary-container": "#634c2d",
+                    "tertiary-fixed-dim": "#eecca5",
+                    "on-error-container": "#752121",
+                    "surface": "#faf9f7",
+                    "outline": "#777c79",
+                    "outline-variant": "#afb3b0",
+                    "on-primary-fixed": "#403f3f",
+                    "primary-dim": "#535252",
+                    "on-tertiary-fixed-variant": "#6e5536",
+                    "surface-dim": "#d6dbd7",
+                    "on-primary-fixed-variant": "#5c5b5b",
+                    "surface-container": "#edeeeb",
+                    "tertiary-dim": "#674f30",
+                    "inverse-surface": "#0d0e0e",
+                    "on-secondary-container": "#515252",
+                    "surface-container-high": "#e6e9e6",
+                    "surface-bright": "#faf9f7",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-fixed-dim": "#d6d4d3",
+                    "secondary": "#5f5f5f",
+                    "on-primary-container": "#525151",
+                    "on-tertiary-fixed": "#4f391d",
+                    "on-error": "#fff7f6",
+                    "background": "#faf9f7",
+                    "surface-container-low": "#f3f4f1",
+                    "secondary-dim": "#535353",
+                    "on-secondary-fixed": "#3f3f3f",
+                    "inverse-primary": "#ffffff",
+                    "on-surface-variant": "#5c605d",
+                    "on-tertiary": "#fff7f3",
+                    "error-dim": "#4e0309",
+                    "tertiary": "#745b3b",
+                    "on-secondary-fixed-variant": "#5b5b5b",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#fddab2",
+                    "secondary-fixed": "#e4e2e2",
+                    "secondary-container": "#e4e2e2",
+                    "error": "#9f403d",
+                    "surface-tint": "#5f5e5e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"],
+                    "noto-serif": ["Noto Serif"],
+                    "manrope": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar Navigation Shell -->
+<nav class="bg-[#faf9f7] dark:bg-stone-900 opacity-80 backdrop-blur-md docked full-width top-0 z-50 flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto fixed">
+<div class="text-2xl font-normal tracking-tighter text-[#2f3331] dark:text-stone-100 font-noto-serif">
+            The Curated Perspective
+        </div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors font-noto-serif tracking-widest uppercase text-sm" href="#">Home</a>
+<a class="text-[#2f3331] dark:text-white border-b-2 border-[#5f5e5e] pb-1 font-noto-serif tracking-widest uppercase text-sm" href="#">Collections</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors font-noto-serif tracking-widest uppercase text-sm" href="#">Exhibitions</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors font-noto-serif tracking-widest uppercase text-sm" href="#">Inquire</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#5f5e5e] dark:text-stone-300 scale-100 active:scale-95 transition-transform" data-icon="shopping_bag">shopping_bag</button>
+<button class="md:hidden material-symbols-outlined text-[#5f5e5e]" data-icon="menu">menu</button>
+</div>
+</nav>
+<main class="pt-32 px-6 md:px-12 max-w-[1920px] mx-auto">
+<!-- Header Section with Intentional Asymmetry -->
+<header class="mb-24 flex flex-col md:flex-row items-baseline gap-8 md:gap-24">
+<h1 class="text-6xl md:text-8xl font-light tracking-tighter max-w-3xl">
+                The <span class="italic font-normal">Collections</span>
+</h1>
+<p class="font-manrope text-sm tracking-widest uppercase text-outline max-w-xs leading-loose">
+                A singular journey through the evolving creative phases and thematic series of a single visionary mind.
+            </p>
+</header>
+<!-- Collection Grid: Asymmetric Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-32 gap-x-12">
+<!-- Category: Contemporary Abstract -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="overflow-hidden mb-6 aspect-[16/9] bg-surface-container-low">
+<img alt="Contemporary Abstract" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="large scale abstract painting with bold expressive brushstrokes in shades of ochre, deep teal, and charcoal gray on a textured canvas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgp7i-oR5yDw4LiNScYQW_t6TlY7UoiX4dZHFzuXmkdm6f9c6-0lDzoctdbPcvtaNnYIrk0mHjHv3NQsaZFglSWG3gZHfHeemgo6i2ccM15ejQ-FbZdrnV1cI7QwU-DGxJo90y-XTJiiuMt5H5iKZyUNiqJfB2taaHZ2x_2oekLNexqtwgv5REO_AtORtnVq5lGf0Fh6a9ZwajMRpaNKXZEMDrfFSMSdm4D8vT1bKGDvi2_plWxhXe4rkPP8p-Twe1TGe6NRGUXQf0"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<span class="font-manrope text-[11px] tracking-[0.2em] uppercase text-tertiary mb-2 block">Phase 01 — The Genesis Series</span>
+<h3 class="text-3xl font-light tracking-tight">Contemporary Abstract</h3>
+</div>
+<p class="font-manrope text-[11px] tracking-[0.1em] uppercase text-outline text-right max-w-[200px]">
+                        Initial explorations of form, color, and emotional resonance.
+                    </p>
+</div>
+</div>
+<!-- Category: Minimalist Landscapes -->
+<div class="md:col-span-4 md:mt-48 group cursor-pointer">
+<div class="overflow-hidden mb-6 aspect-[3/4] bg-surface-container-low">
+<img alt="Minimalist Landscapes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="misty mountain range at dawn with soft gradient layers of blue and gray and a single distant pine tree silhouette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPmpktEAj1dqTmTSzSlIEKpU0rnDwwzHJtexLRgBStKKj20XTTeKpptokEfdNIW-YDMkPx_p4EpwKZsnhh2ToxwWL8j9QYr-zJqbftGigDBY2Ic-ijoJFxRQ-bU66k11s8hAWA3QGlYbzAwqAjg3wy_gGaVIZi8NLcuF6qOLI-A6CkBboNeT4qeLDEe_rMKZYjRbCcFqm68WqRy-grMow-Y9oSGurQHnt8kzjKbU6u2bspd0YZMT_m23_5zK8tXZvS5OGizCVkB-z0"/>
+</div>
+<div>
+<span class="font-manrope text-[11px] tracking-[0.2em] uppercase text-tertiary mb-2 block">Phase 02 — Stillness Series</span>
+<h3 class="text-3xl font-light tracking-tight">Misty Vistas</h3>
+<p class="font-manrope text-sm text-outline-variant mt-4 leading-relaxed">
+                        Capturing the silence of the natural world through a reductionist lens as the artist moved toward minimalism.
+                    </p>
+</div>
+</div>
+<!-- Category: Neo-Portraiture -->
+<div class="md:col-span-5 group cursor-pointer">
+<div class="overflow-hidden mb-6 aspect-[4/5] bg-surface-container-low">
+<img alt="Neo-Portraiture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="striking high contrast portrait of a woman with dramatic shadows and golden light reflecting off high cheekbones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqlQ0kPtz2GTjNdYmA4ZybsIffuym_v_NjgVk67sbbIosuot3CTLqarYR3QIa0_6ZSg0Ap2UpiVkL3yOlWG5mWOly0ZyQcuZd8uxk3q_Av3cdd5F_9gPkx2jvea4wQ4Z9XwqxuSFcWnBrQCyRUusqSMAXFmdZBz45X3XEQKAqiUGHGdd-mQ_fBkQgAopeEsWLMzTVNAa4-gqE3dzIbearnqvC4Vzs92qfU_vO_rKnw_cYtL2lrnOEqlg5bngbScEaTI2ipCOf2lRFC"/>
+</div>
+<div class="flex flex-col">
+<span class="font-manrope text-[11px] tracking-[0.2em] uppercase text-tertiary mb-2 block">Phase 03 — Human Observation</span>
+<h3 class="text-3xl font-light tracking-tight">Neo-Portraiture</h3>
+<p class="font-manrope text-sm text-outline-variant mt-4 leading-relaxed max-w-sm">
+                        A turn toward the internal psyche, documenting the human condition through high-contrast study.
+                    </p>
+</div>
+</div>
+<!-- Empty Space for Asymmetry -->
+<div class="hidden md:block md:col-span-1"></div>
+<!-- Category: Sculpture & Form -->
+<div class="md:col-span-6 md:mt-24 group cursor-pointer">
+<!-- Plinth Card Style -->
+<div class="bg-surface-container-lowest p-12 transition-all duration-500 group-hover:bg-surface-container-high relative">
+<!-- Subtle Ambient Shadow as per system -->
+<div class="absolute inset-0 shadow-[0_12px_48px_rgba(47,51,49,0.04)] pointer-events-none"></div>
+<div class="overflow-hidden aspect-square bg-surface-container-low">
+<img alt="Sculpture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="modern minimalist ceramic sculpture with organic curves in a soft matte bone white finish against a neutral stone background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYtqoxaoKr2cjAps8SKN670JaDiBd8iUbxMgUhE_n2HqPX_VYcqqRJx50DJ0Gjqb60eBfOLAIGlH7wAq4br_lj7wVtpDLS_K47d2NfHFwWTQbB0KPdwyw3WTZbIi3vCpgQs585imj0-hpwTYE_02D7U5Bv2yJGWX5Oya2n4kTOmQk7hG2NPo98aaiI5lu05Tax_I9hZHn9xBWBsPZz3Z7PD4f94RCMV5koeJ33EExdYE3qK0EMald3zdqUkmor3SOcYTx1gJswSebx"/>
+</div>
+<div class="mt-8">
+<span class="font-manrope text-[11px] tracking-[0.2em] uppercase text-tertiary mb-2 block">Phase 04 — Dimensional Evolution</span>
+<h3 class="text-3xl font-light tracking-tight">Architectural Form</h3>
+<div class="h-px w-12 bg-outline-variant/30 my-6"></div>
+<p class="font-manrope text-sm text-outline-variant max-w-sm">
+                            The artist’s expansion into three-dimensional space, where material meets geometry.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Category: Monochrome Photography -->
+<div class="md:col-span-12 group cursor-pointer mt-12">
+<div class="overflow-hidden mb-6 aspect-[21/9] bg-surface-container-low relative">
+<img alt="Monochrome" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="grainy black and white architectural detail of clean concrete lines and sharp shadows under a bright sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxg9s_uVnd6WjakHpvmK7txgs_73WZmqUdiMBhcVyw_0lllOSFtao0iGIOBV1IyOWYP7B630hvG6tv7z2WsqE1XUl7gFtxtMSTywelOx-kTy-eLIapiI97oUTOyjIXo9vVXklt_NqlSXoeD3JQ-iEFOFXC1M8wpA3rsU3waT51gOfq9LvyfQFa1onw0jBPWw8_Yz0j0SWA1pzwp6xE6bk77zolEKPaboVjZ2umG-8hZeNsaE2tNtYgVPPoE64We9oq3twghYqBHUCf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/40 to-transparent"></div>
+<div class="absolute bottom-12 left-12">
+<span class="font-manrope text-[11px] tracking-[0.3em] uppercase text-white/70 mb-2 block">Phase 05 — The Optical Era</span>
+<h3 class="text-5xl font-light tracking-tight text-white">The Void in Monochrome</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Curatorial Note: Typography Detail -->
+<section class="my-48 grid grid-cols-1 md:grid-cols-12">
+<div class="md:col-start-7 md:col-span-5">
+<span class="font-manrope text-[11px] tracking-[0.2em] uppercase text-tertiary mb-8 block">Inquiry &amp; Acquisition</span>
+<h2 class="text-4xl md:text-5xl font-light tracking-tighter leading-tight mb-8">
+                    Every piece tells a <span class="italic">singular</span> story. 
+                </h2>
+<p class="font-manrope text-lg text-outline-variant leading-relaxed mb-12">
+                    Our curators are available to assist you in selecting works from these diverse series that resonate with your personal aesthetic and architectural environment. Every work originates from the same creative mind, ensuring a cohesive yet multifaceted narrative across your collection.
+                </p>
+<button class="bg-primary text-on-primary px-10 py-5 font-manrope text-[11px] tracking-[0.2em] uppercase transition-all duration-300 hover:bg-primary-dim active:scale-95">
+                    Request Artist Catalog
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Navigation Shell -->
+<footer class="w-full mt-24 bg-[#f3f4f1] dark:bg-stone-950 flex flex-col md:flex-row justify-between items-center px-12 py-12 border-t border-[#afb3b0]/15">
+<div class="font-noto-serif text-lg text-[#2f3331] dark:text-stone-200 mb-8 md:mb-0">
+            The Curated Perspective
+        </div>
+<div class="flex gap-8 mb-8 md:mb-0">
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Privacy Policy</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Terms of Service</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Shipping &amp; Returns</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Contact</a>
+</div>
+<div class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#5f5e5e] dark:text-stone-400">
+            © 2024 The Curated Perspective. All rights reserved.
+        </div>
+</footer>
+</body></html>

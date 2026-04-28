@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;700&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#faf7f6",
+                        "tertiary-fixed": "#fddab2",
+                        "on-surface": "#2f3331",
+                        "secondary-fixed-dim": "#d5d4d4",
+                        "surface-variant": "#e0e3e0",
+                        "on-secondary": "#faf8f8",
+                        "error-container": "#fe8983",
+                        "primary-container": "#e5e2e1",
+                        "primary": "#5f5e5e",
+                        "on-background": "#2f3331",
+                        "inverse-on-surface": "#9d9d9b",
+                        "surface-container-highest": "#e0e3e0",
+                        "on-tertiary-container": "#634c2d",
+                        "tertiary-fixed-dim": "#eecca5",
+                        "on-error-container": "#752121",
+                        "surface": "#faf9f7",
+                        "outline": "#777c79",
+                        "outline-variant": "#afb3b0",
+                        "on-primary-fixed": "#403f3f",
+                        "primary-dim": "#535252",
+                        "on-tertiary-fixed-variant": "#6e5536",
+                        "surface-dim": "#d6dbd7",
+                        "on-primary-fixed-variant": "#5c5b5b",
+                        "surface-container": "#edeeeb",
+                        "tertiary-dim": "#674f30",
+                        "inverse-surface": "#0d0e0e",
+                        "on-secondary-container": "#515252",
+                        "surface-container-high": "#e6e9e6",
+                        "surface-bright": "#faf9f7",
+                        "primary-fixed": "#e5e2e1",
+                        "primary-fixed-dim": "#d6d4d3",
+                        "secondary": "#5f5f5f",
+                        "on-primary-container": "#525151",
+                        "on-tertiary-fixed": "#4f391d",
+                        "on-error": "#fff7f6",
+                        "background": "#faf9f7",
+                        "surface-container-low": "#f3f4f1",
+                        "secondary-dim": "#535353",
+                        "on-secondary-fixed": "#3f3f3f",
+                        "inverse-primary": "#ffffff",
+                        "on-surface-variant": "#5c605d",
+                        "on-tertiary": "#fff7f3",
+                        "error-dim": "#4e0309",
+                        "tertiary": "#745b3b",
+                        "on-secondary-fixed-variant": "#5b5b5b",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#fddab2",
+                        "secondary-fixed": "#e4e2e2",
+                        "secondary-container": "#e4e2e2",
+                        "error": "#9f403d",
+                        "surface-tint": "#5f5e5e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #faf9f7; }
+        ::-webkit-scrollbar-thumb { background: #afb3b0; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-tertiary-fixed">
+<!-- TopNavBar -->
+<header class="bg-[#faf9f7] dark:bg-stone-900 opacity-80 backdrop-blur-md docked full-width top-0 z-50 transition-all duration-300">
+<nav class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-normal tracking-tighter text-[#2f3331] dark:text-stone-100 font-noto-serif">
+                The Curated Perspective
+            </div>
+<div class="hidden md:flex items-center gap-10 font-noto-serif tracking-widest uppercase text-sm">
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Home</a>
+<a class="text-[#2f3331] dark:text-white border-b-2 border-[#5f5e5e] pb-1" href="#">Collections</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Artists</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Exhibitions</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Inquire</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="scale-100 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[#5f5e5e] dark:text-stone-300">shopping_bag</span>
+</button>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="min-h-screen pt-12">
+<!-- Breadcrumb Detail -->
+<div class="max-w-[1920px] mx-auto px-12 py-4">
+<nav class="flex items-center gap-4">
+<span class="font-label text-[11px] tracking-[0.1em] uppercase text-outline">Collections</span>
+<div class="w-8 h-[1px] bg-outline-variant opacity-15"></div>
+<span class="font-label text-[11px] tracking-[0.1em] uppercase text-outline">Contemporary Realism</span>
+<div class="w-8 h-[1px] bg-outline-variant opacity-15"></div>
+<span class="font-label text-[11px] tracking-[0.1em] uppercase text-on-surface">The Silent Watcher</span>
+</nav>
+</div>
+<!-- Artwork Detail Grid (Asymmetric Layout) -->
+<section class="max-w-[1920px] mx-auto px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 pb-24 items-start">
+<!-- Featured Image Column -->
+<div class="lg:col-span-7 flex flex-col gap-6 group">
+<div class="relative overflow-hidden cursor-crosshair bg-surface-container-low">
+<img class="w-full h-auto transition-transform duration-700 hover:scale-105" data-alt="large oil painting of a solitary figure standing in a misty landscape with ethereal soft light and moody atmospheric textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr_t0MApHzg4dvLp30MlK_KTGLxlmiG5EZVlbRgckQ_oIdIvSeI1n7iKF5nNFZAZ6bwrkRgNOWy4htZSv82cL9gmDIdHW9S1xHJdLThntsmQ1VbpK3NYCAs1W6Oe3HGV8Wbj_Vib1rlEiuw5iejaRXKTMKRPAO2TWO7YGkYksLGGygMifBL9Aqy8Aky95fwDEp5DoUNe1vyojYT3bwxlK8C88qy_sjjFR5UrS9ZWnvU4G36LgaiAEzXJ4N7EQC3WV-3rCmG46WNREv"/>
+<div class="absolute bottom-6 right-6 p-4 bg-surface/80 backdrop-blur-md flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">zoom_in</span>
+<span class="font-label text-[10px] tracking-widest uppercase">Click to expand details</span>
+</div>
+</div>
+<!-- Alternate Views (Small Thumbnails) -->
+<div class="flex gap-4">
+<div class="w-24 h-24 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="extreme close up of oil paint brushstrokes showing thick texture and impasto technique" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU7sI6qNSNSXFla366V67aq91Wp9QhkYkUwBfemdBjOPG1xaIVmw4AVh7YBYn9UuS_gVPAsuctJFQhSWpJzl3PBX3FP11XwNhXHJ7NuJ-OCfijVpy5m2Zhgaoxz8XLQG09g5ERR-yH1vYNy1IINO91b7A_P-iyxAMb5MCxEOziehRfmyjHOBXJsM-EzIFI9TwT5f0UvKrdQQsI36AhUfhVPTzjmFWOPc3RXhTJ6aDxUvLFBNKY2vmK7mTKnmKEzICi2Pfd2GWtDWVy"/>
+</div>
+<div class="w-24 h-24 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close up view of the artist signature and lower corner of an oil canvas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzXgD8X63OChwfAk3OcgsIwdZ47UU9-JMicChjkn5ZY9RgUmYR27IRxW3w4JFAR1vsoDEe7UAQ9fdUA72Rwsm2OSsPAk3s9RFlhMN-rkbrE0ieLzTwJgygKaDdOdvlqOOLS8Y4kkjOUOKp_kTqSbUmA9ng-FVXDfEh8ll_VniKMUeHyj2a0QaR2khn-J3HY0SpUnjShgWwNOHn5RhNsljba-Px1kaN_2yvUSHoaMMX9vehRQlF8GjEGQasgCHOxitXO7g2YgkiHJEZ"/>
+</div>
+<div class="w-24 h-24 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="the painting displayed in a modern minimalist gallery setting on a white wall with directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxmZoRt0Ha1gk9yBEIfItipIBNkqXL_k_DYzo2wO1vNqP3iIjMyUuyj5oTjH_lrIMqATAFnYj5S5HHKcpYOfY89NDtLPnAGuwxQecUZKYUTyERffuUA5J92Y-nSbRLtI-BmIKVlWmccFpjRX8m7kaibHtJxDLXWwMVbMyj8whPmTqo62FzOkbmFktYpRQ2uI4tch2lZIH5U5qrZH2NhTAtR6V7EFSzPTPy-rIOTafig5_oLxEBctGC7WaMeTUzXTZZZtF5H_hZYD7I"/>
+</div>
+</div>
+</div>
+<!-- Content Column -->
+<div class="lg:col-span-5 flex flex-col gap-10">
+<div class="flex flex-col gap-2">
+<h1 class="font-headline text-5xl lg:text-7xl leading-tight tracking-tight text-on-surface">
+                        The Silent <br/>Watcher
+                    </h1>
+</div>
+<!-- Specs -->
+<div class="flex flex-col gap-4 py-8 border-y border-outline-variant/15">
+<div class="flex justify-between items-baseline">
+<span class="font-label text-[11px] tracking-[0.15em] uppercase text-outline">Medium</span>
+<span class="font-body text-sm font-light">Oil on Belgian Linen</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-label text-[11px] tracking-[0.15em] uppercase text-outline">Dimensions</span>
+<span class="font-body text-sm font-light">48 x 60 inches (122 x 152 cm)</span>
+</div>
+<div class="flex justify-between items-baseline">
+<span class="font-label text-[11px] tracking-[0.15em] uppercase text-outline">Year</span>
+<span class="font-body text-sm font-light">2023</span>
+</div>
+<div class="flex justify-between items-baseline pt-4">
+<span class="font-label text-[11px] tracking-[0.15em] uppercase text-outline">Status</span>
+<span class="font-body text-sm font-medium text-tertiary">Available for Acquisition</span>
+</div>
+</div>
+<!-- Description & Artist Statement -->
+<div class="flex flex-col gap-8">
+<div class="space-y-4">
+<span class="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface">The Work</span>
+<p class="font-body text-base leading-relaxed font-light text-on-surface-variant max-w-lg">
+                            An exploration of solitude and the quiet permanence of the natural world. "The Silent Watcher" utilizes layered glazes to create a sense of depth and atmospheric perspective that shifts as the viewer moves across the canvas.
+                        </p>
+</div>
+<div class="space-y-4">
+<span class="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface">Artist Statement</span>
+<blockquote class="font-headline italic text-lg leading-relaxed text-primary pl-6 border-l-2 border-tertiary/20">
+                            "I am interested in the moment before a storm breaks—the heavy, expectant air and the way light transforms a familiar landscape into something otherworldly."
+                        </blockquote>
+</div>
+</div>
+<!-- Primary Action -->
+<div class="flex flex-col gap-4 mt-8">
+<button class="bg-primary text-on-primary font-label text-sm tracking-[0.2em] uppercase py-5 px-10 flex items-center justify-center gap-4 transition-all hover:bg-primary-dim active:scale-[0.98]">
+                        Inquire about Work
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-transparent border border-outline-variant/15 text-primary font-label text-sm tracking-[0.2em] uppercase py-5 px-10 hover:bg-surface-container-low transition-colors">
+                        View in Augmented Reality
+                    </button>
+</div>
+</div>
+</section>
+<!-- Plinth Section / Featured Detail -->
+<section class="bg-surface-container-low py-32 mt-12">
+<div class="max-w-[1920px] mx-auto px-12 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative order-2 md:order-1">
+<div class="bg-surface-container-lowest p-8 shadow-[0_12px_48px_rgba(47,51,49,0.04)] aspect-square flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="macro shot of fine linen canvas texture with delicate ivory oil paint layers and subtle craquelure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvKuklHAI7ec_BBvhO30DSUvNiuv8SfZKCPnAlzzUeHMvddWRJj5zm_zGpblgVBBFf2SY8RUpKUxp0Ozk601KSeu97v3KVnBmU-EC736MnX1tc7tqT4oTf7vUAv233biigA-vPJaqdhC0V1b0V0Tm2R339Y_IZVHq_CxgXnuxVcN0fgI1YGCDtlxoLaCY_rgj0QwVtjAZ5acaJKPVcg95jh4wNzMy4dKFSfN5DlvS_tJVKD8h9hN8VCbJTkV1eXxT92Asi67D3D-iE"/>
+</div>
+</div>
+<div class="order-1 md:order-2 flex flex-col gap-6">
+<span class="font-label text-[11px] tracking-[0.2em] uppercase text-tertiary">Materiality</span>
+<h2 class="font-headline text-4xl text-on-surface leading-tight">Mastery of Linen &amp; Oil</h2>
+<p class="font-body text-on-surface-variant leading-relaxed max-w-md">
+                        Every piece is crafted using archival-grade Belgian linen and hand-ground pigments. The layering process involves up to twenty individual glazes, each requiring days of curing to achieve the final luminous quality.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Related Artworks Section -->
+<section class="max-w-[1920px] mx-auto px-12 py-32">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-label text-[11px] tracking-[0.2em] uppercase text-outline mb-2 block">Available Works</span>
+<h2 class="font-headline text-4xl text-on-surface">Related from the Studio</h2>
+</div>
+<a class="font-label text-[11px] tracking-[0.2em] uppercase text-on-surface border-b border-on-surface pb-1 mb-2 hover:text-tertiary hover:border-tertiary transition-colors" href="#">Back to Collections</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Related Card 1 -->
+<div class="flex flex-col gap-6 group cursor-pointer">
+<div class="bg-surface-container overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="oil painting of a stormy ocean with dark grey waves and a sliver of golden light on the horizon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1yujeuGFCnpvVA84rsmqLZys8MjAF95n5JO2NbxESo-p1Klbx8XRgRWD83EHNiEpLYvKqmFVi5Cv45mFhGN5TAjVKnLCVIml4NP_Q4MvJp7_5hShRICCveJTUMkZ4JXjmJnTaByj8zPfwa1-BOW6zxvxkimi36QGokaBTsb5lxmb0UozNmvQP1VxHxRV1F4Ido5QG-XL1NuR2Hpi2GEWiyfLq7lrvddQFPp6wEVx04Ae0LMxqooZcAV3gTBumH70Ka6JrCclXfIue"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline text-xl text-on-surface">Edge of the Abyss</h3>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline">Oil on Canvas, 2022</span>
+</div>
+</div>
+<!-- Related Card 2 -->
+<div class="flex flex-col gap-6 group cursor-pointer">
+<div class="bg-surface-container overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="minimalist landscape painting of a snowy field with a single black bird in flight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpxIk6jok2Xuc7BmjIU2-MrIsl5Lzr0auvaYGgDqyIoq59aFWA3DWWnFzuNEy3m5OoYLGF9lzf1KNOqPj4BhSnBZcEqkWXHwwPBI6g4GsSMmsFu0XleufwPVRF2q7F-W9fYrPqgyTJcSG1HLQD5X2yPyeA3MASacftdL36saIl9CgCv2RIZxju-35b2_fZH1jyct8ygnKjenJnteOFbCHQsUwki9bJJF9_ZaKu-90N6WSylfysKoeKQmvfBDgOg-eDd4Xaj0X_NdSS"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline text-xl text-on-surface">Winter Flight</h3>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline text-tertiary">Reserved</span>
+</div>
+</div>
+<!-- Related Card 3 -->
+<div class="flex flex-col gap-6 group cursor-pointer">
+<div class="bg-surface-container overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="abstract oil painting with deep indigo and metallic gold textures suggesting a forest at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiwpcpTX23UvV-_F-KprsIqN5jpMJYFFNuytVMzRObiA8ZeGRTO38kYPFyLogBIkqLDGNc1eHFuvYgePzrGUtN063shIfXn70p1QWWjc0MuTrSpN0sRvHiTxnzDp6EhfuePGugs7SsBoZP3-4C78k_w6IkIC2NkCwjU1kXyJXFUafajL-hB6ezeiIUXeAOUFu4rJPxd4nbK8n8IObvtkcUn0JDc09G69ZF-AafyQknFGM6ruqainmULINk9KwX5pFRQxek5fMqqdPc"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline text-xl text-on-surface">Nocturnal Echo</h3>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline">Oil on Wood, 2023</span>
+</div>
+</div>
+<!-- Related Card 4 -->
+<div class="flex flex-col gap-6 group cursor-pointer">
+<div class="bg-surface-container overflow-hidden aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="painting of a quiet interior room with a window letting in bright morning light and dust motes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiRCaclemw8xDoRhO3zltMtygrqBEWweTTUowhLank2jY_sDqkzxl5k_u2KP2_wx0rckqqEWpZSsqhHsa8m88Y3tTlrpECeCMp1OxSxtMJoS3tKrVDfQeEO9CWcwgBUilRd3uJ3fgqTEh6poyFfiCixnhKYGJMSRobaNj1xrZCmRyG6AWjn5YGcROKIzQ7kFP4plX0Zof3TP7czuGDg3bdgTXh8JxHHy8VtlBz9U0YPtKrmTRU24jhPncNi3ZRyGc7xYD60VDFKw6F"/>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline text-xl text-on-surface">Interior Sunlight</h3>
+<span class="font-label text-[10px] tracking-widest uppercase text-outline">Oil on Linen, 2024</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f3f4f1] dark:bg-stone-950 w-full mt-24 border-t border-[#afb3b0]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full max-w-[1920px] mx-auto">
+<div class="font-noto-serif text-lg text-[#2f3331] dark:text-stone-200 mb-6 md:mb-0">
+                The Curated Perspective
+            </div>
+<div class="flex flex-wrap justify-center gap-8 font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79]">
+<a class="hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Privacy Policy</a>
+<a class="hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Terms of Service</a>
+<a class="hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Shipping &amp; Returns</a>
+<a class="hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Contact</a>
+</div>
+<div class="mt-8 md:mt-0 font-manrope text-[11px] tracking-[0.1em] uppercase text-[#5f5e5e] dark:text-stone-400">
+                © 2024 The Curated Perspective. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

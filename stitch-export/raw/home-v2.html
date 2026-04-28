@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#faf7f6",
+                    "tertiary-fixed": "#fddab2",
+                    "on-surface": "#2f3331",
+                    "secondary-fixed-dim": "#d5d4d4",
+                    "surface-variant": "#e0e3e0",
+                    "on-secondary": "#faf8f8",
+                    "error-container": "#fe8983",
+                    "primary-container": "#e5e2e1",
+                    "primary": "#5f5e5e",
+                    "on-background": "#2f3331",
+                    "inverse-on-surface": "#9d9d9b",
+                    "surface-container-highest": "#e0e3e0",
+                    "on-tertiary-container": "#634c2d",
+                    "tertiary-fixed-dim": "#eecca5",
+                    "on-error-container": "#752121",
+                    "surface": "#faf9f7",
+                    "outline": "#777c79",
+                    "outline-variant": "#afb3b0",
+                    "on-primary-fixed": "#403f3f",
+                    "primary-dim": "#535252",
+                    "on-tertiary-fixed-variant": "#6e5536",
+                    "surface-dim": "#d6dbd7",
+                    "on-primary-fixed-variant": "#5c5b5b",
+                    "surface-container": "#edeeeb",
+                    "tertiary-dim": "#674f30",
+                    "inverse-surface": "#0d0e0e",
+                    "on-secondary-container": "#515252",
+                    "surface-container-high": "#e6e9e6",
+                    "surface-bright": "#faf9f7",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-fixed-dim": "#d6d4d3",
+                    "secondary": "#5f5f5f",
+                    "on-primary-container": "#525151",
+                    "on-tertiary-fixed": "#4f391d",
+                    "on-error": "#fff7f6",
+                    "background": "#faf9f7",
+                    "surface-container-low": "#f3f4f1",
+                    "secondary-dim": "#535353",
+                    "on-secondary-fixed": "#3f3f3f",
+                    "inverse-primary": "#ffffff",
+                    "on-surface-variant": "#5c605d",
+                    "on-tertiary": "#fff7f3",
+                    "error-dim": "#4e0309",
+                    "tertiary": "#745b3b",
+                    "on-secondary-fixed-variant": "#5b5b5b",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#fddab2",
+                    "secondary-fixed": "#e4e2e2",
+                    "secondary-container": "#e4e2e2",
+                    "error": "#9f403d",
+                    "surface-tint": "#5f5e5e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Noto Serif"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #faf9f7;
+            color: #2f3331;
+        }
+        .font-noto-serif { font-family: 'Noto Serif', serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 z-50 w-full bg-[#faf9f7] dark:bg-stone-900 opacity-80 backdrop-blur-md">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-normal tracking-tighter text-[#2f3331] dark:text-stone-100 font-noto-serif">
+                The Curated Perspective
+            </div>
+<div class="hidden md:flex gap-12 items-center font-noto-serif tracking-widest uppercase text-xs">
+<a class="text-[#2f3331] dark:text-white border-b-2 border-[#5f5e5e] pb-1" href="#">Home</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Collections</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Artists</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Exhibitions</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Inquire</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#5f5e5e] cursor-pointer">shopping_bag</span>
+</div>
+</div>
+</nav>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section: The Masterpiece -->
+<section class="relative w-full h-[921px] flex items-center px-12 md:px-24 mb-32">
+<div class="z-10 max-w-2xl">
+<p class="font-manrope text-[11px] tracking-[0.3em] uppercase text-outline mb-4">Summer Collection 2024</p>
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-normal leading-tight tracking-tighter mb-8">
+                    Silence <span class="italic text-tertiary">in</span> Motion
+                </h1>
+<div class="flex gap-8 items-center">
+<button class="bg-primary text-on-primary px-8 py-4 font-manrope text-xs tracking-widest uppercase hover:bg-primary-dim transition-all duration-300">
+                        View Masterpiece
+                    </button>
+<button class="text-primary font-manrope text-xs tracking-widest uppercase border-b border-outline-variant/30 pb-1 hover:border-primary transition-all">
+                        Artistic Process
+                    </button>
+</div>
+</div>
+<div class="absolute right-0 top-0 w-3/5 h-full">
+<img class="w-full h-full object-cover grayscale-[20%]" data-alt="large scale abstract oil painting with heavy texture in muted earth tones of beige, charcoal, and ochre with soft directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ7kqlbWzPGhD2TsSvmCT4PCYy7gRI-pHfPqlacmcgY1q1A8x5H0xfUKlei0jIzb--41CzpHsIcKqYN_57L0ICusd_1RMzamA0QZuvAoZakE_6WqersDog73aed_t5u-HekRfry_Tigr2ff4VBBkIa5Rbw5yv1NdYbIADuZdyL6fjmOmwrhaC9m5465ma9fOFKVTqHdTpkH9cAVLYty5709-wFzYk6wSBIA3oxTcZSHSoaBrxCdp8PFeSkAMdEgb1AX8D4j9Bg9IVs"/>
+</div>
+</section>
+<!-- About The Artist: Asymmetric Layout -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-16 px-12 md:px-24 mb-48 items-center">
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-low p-12">
+<img class="w-full h-full object-cover shadow-2xl" data-alt="candid black and white portrait of a focused artist in a sunlit studio surrounded by canvases and paint brushes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlNV8nXQiFiuSgkiNb5Tw-rkI8JyGaMCLklRPAFeqDwaagV0Nc-rP_v68O7x0I4QvsF-BT_WosU6-mXIftYn0PRf9GFK7lP8xld1u-tAgH6QAnHQ8L0rhrXkYxQoAxRWf_dXOSH5WMWzBud-5tuDkfRWT97TLV-Be_JX2t9HTigf-V-TPr7H2r6I1alESOI4a7pU6k8COenzuyiDW14kHk88Zp_0wZ76woYUM07YC6nCb--zW1cAJITHodIRacm5CECKxisoZxB8gG"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-tertiary flex items-center justify-center p-8 text-on-primary">
+<p class="font-noto-serif text-sm italic text-center">"Art is the architecture of the soul made visible."</p>
+</div>
+</div>
+<div class="md:col-span-6 md:col-start-7">
+<h2 class="font-headline text-4xl mb-8 tracking-tight">The Hand Behind the Canvas</h2>
+<div class="space-y-6 font-manrope text-on-surface-variant leading-relaxed text-lg">
+<p>Based in the quiet landscapes of Northern Europe, Elena Vance creates works that bridge the gap between architectural rigidity and the fluidity of nature.</p>
+<p>Each piece is a multi-layered exploration of memory, utilizing reclaimed pigments and traditional oils to build textures that demand physical presence. Her work is held in private collections from Kyoto to New York.</p>
+</div>
+<div class="mt-12 flex gap-12">
+<div>
+<p class="font-headline text-2xl">15+</p>
+<p class="font-manrope text-[10px] tracking-widest uppercase text-outline">Exhibitions</p>
+</div>
+<div>
+<p class="font-headline text-2xl">200</p>
+<p class="font-manrope text-[10px] tracking-widest uppercase text-outline">Private Works</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Art Styles: Gallery Grid -->
+<section class="bg-surface-container-low py-32 px-12 md:px-24">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-4xl tracking-tight mb-2">Curated Disciplines</h2>
+<p class="font-manrope text-sm text-outline">A dialogue between form and chaos.</p>
+</div>
+<a class="font-manrope text-xs tracking-widest uppercase border-b border-primary pb-1 text-primary" href="#">Browse All Styles</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Abstract Style -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-6 bg-surface">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="detail shot of an abstract painting with thick impasto brushstrokes in shades of slate gray and pale gold" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2uFdQXR3Kxsap0qqsMR91A8APm1ASYsq6PDUzEzzmy2WfoTJlI3CTzzuQHOS83cIcJQgaKtuCFbYp1J3_hIvDzeB6rXcokkGlgghcAlLe6-x-2nZlG3pF42CXfNMbXnZJGu-QUtwo79XgbBApsLdrEFRR7hCb7yVEAtr9QqinKtNR0PUG0hH0scQXr4s3Gnbh-PscAK5zCbTTrFuUu_U0pFAEx-zc9gZ4fw9kBu2HXZmAwr1CFvffOfM5uzwN3LZ_ydFft7PnO0GE"/>
+</div>
+<p class="font-manrope text-[10px] tracking-[0.2em] uppercase text-outline mb-1">Discipline 01</p>
+<h3 class="font-headline text-xl mb-4">Textural Abstract</h3>
+<p class="font-manrope text-sm text-on-surface-variant line-clamp-2">Exploring the tactile boundaries of raw canvas and heavy minerals.</p>
+</div>
+<!-- Realism Style -->
+<div class="group cursor-pointer mt-12 md:mt-24">
+<div class="aspect-[3/4] overflow-hidden mb-6 bg-surface">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="contemporary realist painting of a single glass of water on a wooden table with dramatic light and shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6vWlzn3RylAfSfyBmkmdJapDqoit0OvDG3eROKJGXuXBVj44C2zNO2YeJ42VqPFuzVWG4xNZOoCz8VC7bgiQodYNce2fKJ25VXBJyDBuzXN9YBR2YYsSHsXHf9vRaLaGvRj2vyT04BC7shbq5z-c7DQv-JTmjOtdxYwNPZHK6FNwir2R1_KyS5ZVHmY16gWoNk0Gp7cevrPHip3W47kWOq-bRGJ2Me2R10nXHKHbFLXEeY2tIAc5ACxIzBPlsS1umvl8PS73ymXzu"/>
+</div>
+<p class="font-manrope text-[10px] tracking-[0.2em] uppercase text-outline mb-1">Discipline 02</p>
+<h3 class="font-headline text-xl mb-4">Quiet Realism</h3>
+<p class="font-manrope text-sm text-on-surface-variant line-clamp-2">Capturing the monumental significance of everyday stillness.</p>
+</div>
+<!-- Minimalist Style -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] overflow-hidden mb-6 bg-surface">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="minimalist ink wash painting on handmade paper with a single sweeping black stroke" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsm-iu6qZhl335L4dhwRaWK4UXwq-R-Mt7XEjfxK_kuYPrvw0nfVSiJShAny3lwqRawN0plYrx-ZYTgYVfjwTwmxVhs3KI0VUx7ifeeX1tNV32kNS3_5mK_zGuGbJqSd33E6txPzBVViR9OzUpagaFQfDUP_VO5DZbHfYp_5U4UwYGKRZhGe_sfyMv6qxc07eIqmCumu4yz5PNJkypkGvag1UBuoDnaaMZoQ6X3XL6YQJ4My_Cq-UYYaUbKRIOuW6vIuFAPbNpWFNH"/>
+</div>
+<p class="font-manrope text-[10px] tracking-[0.2em] uppercase text-outline mb-1">Discipline 03</p>
+<h3 class="font-headline text-xl mb-4">Atmospheric Wash</h3>
+<p class="font-manrope text-sm text-on-surface-variant line-clamp-2">The art of subtraction. Finding the essence in the empty space.</p>
+</div>
+</div>
+</section>
+<!-- Lifestyle Section: Art in Home -->
+<section class="py-32">
+<div class="text-center mb-24 px-12">
+<h2 class="font-headline text-4xl mb-4">The Living Gallery</h2>
+<p class="font-manrope text-sm text-on-surface-variant max-w-lg mx-auto">Visualizing how a single piece can redefine the architecture of your personal space.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-4 px-4">
+<div class="flex-1 h-[600px] bg-surface-dim relative overflow-hidden group">
+<img class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000" data-alt="high-end minimalist living room with a large abstract painting above a low-profile beige sofa and soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeWwflgK8tVFXWk4PVbtAPKnO8OAkf6yoYA_Hc5HTHqjovrVIX_8pex6Nn5jpNLGGHj39vRNWOJ_CRdmIDP1VNHgPeFuvzc75fjbPl2XsQKX2H1h0DfwqGCYzK2IU3UlhrWTo1LYnZxjMd8_963Yz_7BV66Y4ox-NgBQ7u2a6J9gPpjafTVRP2Jiz_fk-YraMT0to8QXsrwUZ0l8Il-SXuYNf9ydhDbZG-wgcBKPTd-VXuj-z2oKKT08dFDlc9bHJs73C1PQoKOqQe"/>
+<div class="absolute bottom-8 left-8 text-on-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-manrope text-[10px] tracking-widest uppercase mb-1">Featured Setting</p>
+<p class="font-headline text-lg">The Penthouse Series</p>
+</div>
+</div>
+<div class="flex-1 h-[600px] bg-surface-dim relative overflow-hidden group mt-12 md:mt-0">
+<img class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000" data-alt="modern brutalist dining area with concrete walls and a large vertical oil painting in deep blues and blacks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1nmFyrw_Lu5aKGPleaVJ5uya_hqJMTCeKxEZBKOcsqzEgA50-zeauaW1UefnsLm_mSi89QcGUVuvwvmQGYj_x_XFOUZalJ82ldRBbtsfaIK-sQ4GAnlqfsM762-5BqTv1sRGrAgz86wxNqHOtq1bsavp32dncCjRVI_5IyLhhhjYJiUPHYExgIjfWqP4vd0vnboeJ6-XFzD_ORWJO8T9AJg_7XyBRa2igXX8ZeEa9LrZjk2CGKv7xXBuY0lOWZmuFkSjgpZrOLUCE"/>
+<div class="absolute bottom-8 left-8 text-on-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<p class="font-manrope text-[10px] tracking-widest uppercase mb-1">Featured Setting</p>
+<p class="font-headline text-lg">Industrial Haven</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Call to Action -->
+<section class="bg-[#2f3331] text-on-primary py-32 px-12 text-center">
+<h2 class="font-headline text-4xl md:text-5xl mb-12 max-w-2xl mx-auto leading-tight">Begin Your Curated Collection</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-tertiary text-on-primary px-12 py-5 font-manrope text-xs tracking-widest uppercase hover:bg-tertiary-dim transition-all">
+                    Request Catalog
+                </button>
+<button class="border border-outline-variant/30 px-12 py-5 font-manrope text-xs tracking-widest uppercase hover:bg-white/10 transition-all">
+                    Private Studio Visit
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-[#f3f4f1] dark:bg-stone-950 mt-24">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full border-t border-[#afb3b0]/15 max-w-[1920px] mx-auto">
+<div class="font-noto-serif text-lg text-[#2f3331] dark:text-stone-200 mb-8 md:mb-0">
+                The Curated Perspective
+            </div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Privacy Policy</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Terms of Service</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Shipping &amp; Returns</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-opacity" href="#">Contact</a>
+</div>
+<div class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#5f5e5e] dark:text-stone-400">
+                © 2024 The Curated Perspective. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

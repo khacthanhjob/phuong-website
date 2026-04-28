@@ -39,6 +39,11 @@ yarn-error.log*
 # claude code local state
 .claude/
 
+# Playwright MCP screenshots / artifacts
+.playwright-mcp/
+/port-*.png
+/page-*.png
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

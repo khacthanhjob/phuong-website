@@ -1,12 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllSlugs, getPaintingBySlug } from "@/lib/paintings";
+import { PaintingCard } from "@/components/PaintingCard";
+import {
+  getAllPaintings,
+  getAllSlugs,
+  getPaintingBySlug,
+} from "@/lib/paintings";
 
 const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@example.com";
 
 type Params = Promise<{ slug: string }>;
+
+const STATUS_LABEL: Record<string, string> = {
+  available: "Available for Acquisition",
+  sold: "In Private Collection",
+  reserved: "Reserved",
+};
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();
@@ -32,6 +43,9 @@ export default async function PaintingDetailPage({
   const painting = await getPaintingBySlug(slug);
   if (!painting) notFound();
 
+  const all = await getAllPaintings();
+  const related = all.filter((p) => p.id !== painting.id).slice(0, 4);
+
   const subject = encodeURIComponent(`Inquiry: ${painting.title}`);
   const body = encodeURIComponent(
     `Hi Phượng,\n\nI'm interested in "${painting.title}" (${painting.year}).\n\n— `,
@@ -39,65 +53,146 @@ export default async function PaintingDetailPage({
   const mailto = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 
   return (
-    <article className="mx-auto max-w-5xl px-6 pt-8 pb-16">
-      <Link
-        href="/paintings"
-        className="text-sm text-black/60 hover:underline underline-offset-4"
-      >
-        ← Back to gallery
-      </Link>
+    <>
+      {/* Breadcrumb */}
+      <div className="max-w-[1920px] mx-auto px-6 md:px-12 py-4">
+        <nav className="flex items-center gap-4">
+          <Link
+            href="/paintings"
+            className="font-label text-[11px] tracking-[0.1em] uppercase text-outline hover:text-on-surface transition-colors"
+          >
+            Gallery
+          </Link>
+          <div className="w-8 h-[1px] bg-outline-variant opacity-15" />
+          <span className="font-label text-[11px] tracking-[0.1em] uppercase text-on-surface">
+            {painting.title}
+          </span>
+        </nav>
+      </div>
 
-      <div className="mt-6 grid lg:grid-cols-[3fr,2fr] gap-10">
-        <div className="relative w-full aspect-[4/5] bg-neutral-100">
-          <Image
-            src={painting.imageUrl}
-            alt={painting.title}
-            fill
-            sizes="(min-width: 1024px) 60vw, 100vw"
-            className="object-contain"
-            priority
-          />
+      {/* Detail Grid */}
+      <section className="max-w-[1920px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-24 items-start">
+        {/* Image */}
+        <div className="lg:col-span-7 group">
+          <div className="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+            <Image
+              src={painting.imageUrl}
+              alt={painting.title}
+              fill
+              priority
+              sizes="(min-width: 1024px) 60vw, 100vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          </div>
         </div>
 
-        <div>
-          <h1 className="text-3xl font-semibold tracking-tight">
-            {painting.title}
-          </h1>
-          <p className="mt-1 text-black/60">{painting.year}</p>
+        {/* Content */}
+        <div className="lg:col-span-5 flex flex-col gap-10">
+          <div>
+            <h1 className="font-headline text-5xl lg:text-7xl leading-tight tracking-tight text-on-surface">
+              {painting.title}
+            </h1>
+          </div>
 
-          <dl className="mt-6 grid grid-cols-2 gap-y-2 text-sm">
+          {/* Specs */}
+          <div className="flex flex-col gap-4 py-8 border-y border-outline-variant/15">
             {painting.medium && (
-              <>
-                <dt className="text-black/50">Medium</dt>
-                <dd>{painting.medium}</dd>
-              </>
+              <div className="flex justify-between items-baseline gap-4">
+                <span className="font-label text-[11px] tracking-[0.15em] uppercase text-outline">
+                  Medium
+                </span>
+                <span className="font-body text-sm font-light text-right">
+                  {painting.medium}
+                </span>
+              </div>
             )}
             {painting.dimensions && (
-              <>
-                <dt className="text-black/50">Dimensions</dt>
-                <dd>{painting.dimensions}</dd>
-              </>
+              <div className="flex justify-between items-baseline gap-4">
+                <span className="font-label text-[11px] tracking-[0.15em] uppercase text-outline">
+                  Dimensions
+                </span>
+                <span className="font-body text-sm font-light text-right">
+                  {painting.dimensions}
+                </span>
+              </div>
             )}
-            <dt className="text-black/50">Status</dt>
-            <dd className="capitalize">{painting.status}</dd>
-          </dl>
+            <div className="flex justify-between items-baseline gap-4">
+              <span className="font-label text-[11px] tracking-[0.15em] uppercase text-outline">
+                Year
+              </span>
+              <span className="font-body text-sm font-light text-right">
+                {painting.year}
+              </span>
+            </div>
+            <div className="flex justify-between items-baseline pt-4 gap-4">
+              <span className="font-label text-[11px] tracking-[0.15em] uppercase text-outline">
+                Status
+              </span>
+              <span
+                className={`font-body text-sm font-medium text-right ${
+                  painting.status === "available"
+                    ? "text-tertiary"
+                    : "text-on-surface-variant"
+                }`}
+              >
+                {STATUS_LABEL[painting.status]}
+              </span>
+            </div>
+          </div>
 
+          {/* Description */}
           {painting.description && (
-            <p className="mt-6 text-base leading-relaxed text-black/80 whitespace-pre-line">
-              {painting.description}
-            </p>
+            <div className="space-y-4">
+              <span className="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface">
+                The Work
+              </span>
+              <p className="font-body text-base leading-relaxed font-light text-on-surface-variant whitespace-pre-line">
+                {painting.description}
+              </p>
+            </div>
           )}
 
+          {/* CTA */}
           {painting.status === "available" && (
-            <a
-              href={mailto}
-              className="mt-8 inline-flex items-center px-5 py-2.5 bg-neutral-900 text-white text-sm rounded hover:bg-neutral-800"
-            >
-              Inquire about this painting
-            </a>
+            <div className="flex flex-col gap-4 mt-4">
+              <a
+                href={mailto}
+                className="bg-primary text-on-primary font-label text-sm tracking-[0.2em] uppercase py-5 px-10 flex items-center justify-center gap-4 transition-all hover:bg-primary-dim active:scale-[0.98]"
+              >
+                Inquire about Work
+                <span aria-hidden>→</span>
+              </a>
+            </div>
           )}
         </div>
-      </div>
-    </article>
+      </section>
+
+      {/* Related Works */}
+      {related.length > 0 && (
+        <section className="max-w-[1920px] mx-auto px-6 md:px-12 py-24 md:py-32">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 mb-12">
+            <div>
+              <span className="font-label text-[11px] tracking-[0.2em] uppercase text-outline mb-2 block">
+                Related Works
+              </span>
+              <h2 className="font-headline text-4xl text-on-surface">
+                From the Studio
+              </h2>
+            </div>
+            <Link
+              href="/paintings"
+              className="font-label text-[11px] tracking-[0.2em] uppercase text-on-surface border-b border-on-surface pb-1 self-start sm:self-end hover:text-tertiary hover:border-tertiary transition-colors"
+            >
+              Back to Gallery
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
+            {related.map((p) => (
+              <PaintingCard key={p.id} painting={p} aspect="aspect-[3/4]" />
+            ))}
+          </div>
+        </section>
+      )}
+    </>
   );
 }

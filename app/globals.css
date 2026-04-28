@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: #faf9f7;
+  --color-surface-bright: #faf9f7;
+  --color-surface-dim: #d6dbd7;
+  --color-surface-variant: #e0e3e0;
+  --color-surface-container: #edeeeb;
+  --color-surface-container-low: #f3f4f1;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e6e9e6;
+  --color-surface-container-highest: #e0e3e0;
+  --color-on-surface: #2f3331;
+  --color-on-surface-variant: #5c605d;
+  --color-primary: #5f5e5e;
+  --color-primary-dim: #535252;
+  --color-primary-container: #e5e2e1;
+  --color-on-primary: #faf7f6;
+  --color-on-primary-container: #525151;
+  --color-tertiary: #745b3b;
+  --color-tertiary-dim: #674f30;
+  --color-tertiary-container: #fddab2;
+  --color-on-tertiary: #fff7f3;
+  --color-on-tertiary-container: #634c2d;
+  --color-outline: #777c79;
+  --color-outline-variant: #afb3b0;
+  --color-error: #9f403d;
+  --color-on-error: #fff7f6;
+  --color-background: #faf9f7;
+  --color-on-background: #2f3331;
+  --font-headline: var(--font-noto-serif), ui-serif, Georgia, serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-label: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), ui-serif, Georgia, serif;
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-tertiary-container);
+  color: var(--color-on-tertiary-container);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
 }

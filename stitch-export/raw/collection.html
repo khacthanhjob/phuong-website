@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contemporary Abstract | The Curated Perspective</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#faf7f6",
+                    "tertiary-fixed": "#fddab2",
+                    "on-surface": "#2f3331",
+                    "secondary-fixed-dim": "#d5d4d4",
+                    "surface-variant": "#e0e3e0",
+                    "on-secondary": "#faf8f8",
+                    "error-container": "#fe8983",
+                    "primary-container": "#e5e2e1",
+                    "primary": "#5f5e5e",
+                    "on-background": "#2f3331",
+                    "inverse-on-surface": "#9d9d9b",
+                    "surface-container-highest": "#e0e3e0",
+                    "on-tertiary-container": "#634c2d",
+                    "tertiary-fixed-dim": "#eecca5",
+                    "on-error-container": "#752121",
+                    "surface": "#faf9f7",
+                    "outline": "#777c79",
+                    "outline-variant": "#afb3b0",
+                    "on-primary-fixed": "#403f3f",
+                    "primary-dim": "#535252",
+                    "on-tertiary-fixed-variant": "#6e5536",
+                    "surface-dim": "#d6dbd7",
+                    "on-primary-fixed-variant": "#5c5b5b",
+                    "surface-container": "#edeeeb",
+                    "tertiary-dim": "#674f30",
+                    "inverse-surface": "#0d0e0e",
+                    "on-secondary-container": "#515252",
+                    "surface-container-high": "#e6e9e6",
+                    "surface-bright": "#faf9f7",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-fixed-dim": "#d6d4d3",
+                    "secondary": "#5f5f5f",
+                    "on-primary-container": "#525151",
+                    "on-tertiary-fixed": "#4f391d",
+                    "on-error": "#fff7f6",
+                    "background": "#faf9f7",
+                    "surface-container-low": "#f3f4f1",
+                    "secondary-dim": "#535353",
+                    "on-secondary-fixed": "#3f3f3f",
+                    "inverse-primary": "#ffffff",
+                    "on-surface-variant": "#5c605d",
+                    "on-tertiary": "#fff7f3",
+                    "error-dim": "#4e0309",
+                    "tertiary": "#745b3b",
+                    "on-secondary-fixed-variant": "#5b5b5b",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#fddab2",
+                    "secondary-fixed": "#e4e2e2",
+                    "secondary-container": "#e4e2e2",
+                    "error": "#9f403d",
+                    "surface-tint": "#5f5e5e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf9f7;
+            color: #2f3331;
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary-container selection:text-on-tertiary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#faf9f7] dark:bg-stone-900 opacity-80 backdrop-blur-md">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<div class="text-2xl font-normal tracking-tighter text-[#2f3331] dark:text-stone-100 font-noto-serif font-headline">
+                The Curated Perspective
+            </div>
+<div class="hidden md:flex items-center space-x-12 font-noto-serif tracking-widest uppercase text-xs">
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Home</a>
+<a class="text-[#2f3331] dark:text-white border-b-2 border-[#5f5e5e] pb-1" href="#">Collections</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Artists</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Exhibitions</a>
+<a class="text-[#777c79] dark:text-stone-500 hover:text-[#2f3331] transition-colors" href="#">Inquire</a>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-[#5f5e5e] cursor-pointer hover:opacity-70 transition-opacity">shopping_bag</span>
+<span class="material-symbols-outlined text-[#5f5e5e] md:hidden">menu</span>
+</div>
+</div>
+</nav>
+<!-- Hero / Category Header -->
+<header class="pt-48 pb-24 px-12 max-w-[1920px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<nav class="mb-6 flex items-center space-x-4">
+<span class="text-[10px] font-label tracking-[0.2em] uppercase text-outline">Collections</span>
+<div class="h-[1px] w-8 bg-outline-variant opacity-30"></div>
+<span class="text-[10px] font-label tracking-[0.2em] uppercase text-on-surface">Contemporary Abstract</span>
+</nav>
+<h1 class="text-6xl md:text-8xl font-headline font-normal tracking-tight text-on-surface leading-tight">
+                    Contemporary <br/> <span class="italic pl-12 md:pl-24">Abstract</span>
+</h1>
+</div>
+<div class="md:text-right">
+<p class="text-sm font-label tracking-[0.1em] uppercase text-outline mb-2">Total Works</p>
+<p class="text-3xl font-headline italic">14</p>
+</div>
+</div>
+<div class="mt-12 w-full h-[1px] bg-outline-variant opacity-15"></div>
+</header>
+<!-- Filter Bar (Minimalist) -->
+<section class="px-12 mb-16 max-w-[1920px] mx-auto flex flex-wrap justify-between items-center gap-6">
+<div class="flex space-x-8">
+<button class="group flex items-center space-x-2 text-[11px] font-label tracking-[0.15em] uppercase text-on-surface">
+<span>Filter By Medium</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+<button class="group flex items-center space-x-2 text-[11px] font-label tracking-[0.15em] uppercase text-on-surface">
+<span>Sort By Newest</span>
+<span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+</div>
+<div class="flex items-center space-x-4 text-[11px] font-label tracking-[0.15em] uppercase text-outline">
+<span>View:</span>
+<button class="text-on-surface font-bold">Grid</button>
+<button class="hover:text-on-surface transition-colors">List</button>
+</div>
+</section>
+<!-- Art Grid -->
+<main class="px-12 max-w-[1920px] mx-auto mb-32">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
+<!-- Art Card 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[4/5] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" data-alt="large scale abstract painting with bold strokes of ochre, charcoal, and cream on a textured canvas, soft natural gallery lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHLg27nQcwhNUjCIi_JcJr3A6rsfqyt3bQtvGwbUJS6nG6IKGn3JrYlF-zJwiMd9304gWLtEPiGyKw0MdBUHc361Q0S2Y_ziZbG7_7mlk63zmXi--4mOMw3zaDBNvPGPlqr3ZUon0-0nOw42wqg5Pq2IQ3H7o_PkiNtFoH-2Gy3CDQQy5iVcezOLMN6hkue1JVB89JacZFRv___AwQN3aODsAKcSl_eRogEkGG9-XtVU9iLenFMLHmQxcDSah6P6oij4gbPvcRYGwZ"/>
+<div class="absolute inset-0 bg-on-surface/0 group-hover:bg-on-surface/5 transition-colors duration-500"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline mb-1 group-hover:italic transition-all">Echoes of Silence</h3>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline">Elena Rodriguez, 2023</p>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline-variant mt-1">Oil and Graphite on Linen</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-label font-medium">$4,200</p>
+<p class="text-[9px] font-label tracking-widest uppercase text-tertiary mt-1">Available</p>
+</div>
+</div>
+</div>
+<!-- Art Card 2 (Asymmetric shift) -->
+<div class="group cursor-pointer lg:mt-12">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" data-alt="minimalist abstract composition with floating geometric shapes in muted earth tones of sage green and sand, high key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASOB49aTNy2hyQMX_LXbYbb4bHZoyi6YfXGZBVAD6XAyoHG2b1icJ46d1qSJ3Qr9UTWCBWVIq0ciqCEzkbwnQYh_jVIKmy8w31JG30Bu8q4fLieRB-hsG1O_GovsYnD59j4Bh12p-FER3c1GvM2kxXY9oZgLA4LHHfLlIvB9sEzBMUH2m4jgSir7E1QE3XdQu4SuND1sz44v5QbUI-Iq26YOyVSrAxjDe5HAUkGfqOPmBKTRAS5VFpfGfZK6fZ8IPd1fjM3cr4S435"/>
+<div class="absolute inset-0 bg-on-surface/0 group-hover:bg-on-surface/5 transition-colors duration-500"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline mb-1 group-hover:italic transition-all">Fragmented Horizon</h3>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline">Marcus Thorne, 2024</p>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline-variant mt-1">Mixed Media on Wood Panel</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-label font-medium">$3,850</p>
+<p class="text-[9px] font-label tracking-widest uppercase text-outline-variant mt-1">In Private Collection</p>
+</div>
+</div>
+</div>
+<!-- Art Card 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[4/5] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" data-alt="vibrant abstract expressionist painting with intense layers of cerulean blue and burnt sienna, textured impasto technique" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAohC4t90QaDhWYKHZEhBo8CGKeIMhKm1Whf6ly9T3JvmPgpGTl4mgwH1Yy0Iz_7Rd5Pisy23WyF3XQvVmJX4rMx6r0DYl_gxTWJ4YwC3DnqGslQB1RrkZTvB6z1VmC2rTCAxVGqtHDyp1agYEmtp_PrvEcdRLG6_Rm9VAtZlCq_-NRWT-hls6wWfQ6FZPt_AYp5b4_7puBZHKAshzb9hTR5FvpfjhILcQYzh_tksk03xC3KBoGpm_-gO0x2TMnAe1spCH0Gfv80ZAh"/>
+<div class="absolute inset-0 bg-on-surface/0 group-hover:bg-on-surface/5 transition-colors duration-500"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline mb-1 group-hover:italic transition-all">Transient States II</h3>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline">Sarah Al-Fayed, 2023</p>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline-variant mt-1">Acrylic and Resin on Canvas</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-label font-medium">$5,600</p>
+<p class="text-[9px] font-label tracking-widest uppercase text-tertiary mt-1">Available</p>
+</div>
+</div>
+</div>
+<!-- Art Card 4 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[1/1] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" data-alt="monochrome abstract study in black and white with delicate ink washes and sharp calligraphic lines, ethereal atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpl-teGKGpjr4XPHE_hswL-FhBlLr2wGJ2X4TJ_GA3x7RL961VsWknQZQZn7mP31MUEZYxCdbyYZIcHoDG5Uh5z4HFHZ5aOplUNPpcCnbPMartjf12QZmih0mcmgeNE65WjiDJQuRiGbv2jPT27FvRz-banEYCMLGLIGVXUKpKlbXdOrlZrUAARJ8TVrsGXaQVOhoak48y76ssq-n5DYgfyF7IooVzIK6yvD_5bNHkFgPvBNsIqRqLa2kAVHUr4RyE_TLbUhESAEAb"/>
+<div class="absolute inset-0 bg-on-surface/0 group-hover:bg-on-surface/5 transition-colors duration-500"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline mb-1 group-hover:italic transition-all">Linguistic Void</h3>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline">Kaito Tanaka, 2024</p>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline-variant mt-1">Japanese Ink on Mulberry Paper</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-label font-medium">$2,100</p>
+<p class="text-[9px] font-label tracking-widest uppercase text-tertiary mt-1">Available</p>
+</div>
+</div>
+</div>
+<!-- Art Card 5 (Asymmetric shift) -->
+<div class="group cursor-pointer lg:mt-24">
+<div class="relative overflow-hidden mb-6 aspect-[4/5] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" data-alt="contemporary abstract painting featuring a heavy palette knife texture with metallic copper and deep indigo accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgSUD62E6NEGJRNHE8pvpfaoF5xPmpAJ8GdaV-N_IQJvBLPkRGOtjDpqPclWQfoVVUDEFseXPd9Zh2hltS34_Fo2a6zlFK_LKJMqc7BFqGTabUFTY1fODXM3qrC3oChHuJ9-oVmfJR5TmNhSdqE28dHs34hIedfY5T-IBwumGYaUGf1evCBSijdHhqzlfc7dbv95APmJRog4aPKgT6Eb9t9Nxrt8TU2a-bRktxFwnD5ofNK6CTYgY1GoyQgVLuU2GtGZCe9ap2rlEP"/>
+<div class="absolute inset-0 bg-on-surface/0 group-hover:bg-on-surface/5 transition-colors duration-500"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline mb-1 group-hover:italic transition-all">Oxidation #4</h3>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline">David Halloway, 2022</p>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline-variant mt-1">Encaustic and Copper Dust</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-label font-medium">$7,900</p>
+<p class="text-[9px] font-label tracking-widest uppercase text-tertiary mt-1">Available</p>
+</div>
+</div>
+</div>
+<!-- Art Card 6 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden mb-6 aspect-[3/4] bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" data-alt="ethereal abstract painting with soft washes of lilac and pale gold, evoking a misty sunrise or dreamscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPPPJsJUAeLWMbNMIRDykX0HtGBwUlEcFS-yBxX6pi2BGI6s-AGH2bw6OcMdAriZhUqhDRxnAbfsYncISshMhe3vhIuo4HtpVNahaVopLpXfWLPUM-TdbL5I6MQFezg-RWR2z20u4Djl5Sb6r6UFfNDcwQ0vSrb2i8Q-x7EXRcw62a8tOlNL5pzkgdLdB2h_HbtErA5TL5dI3z0gg-_M4u28Bcz96TruEsI-OffXL2J4IlhmIFuDynAR7ue9C17wqfoKXFaegx9W3X"/>
+<div class="absolute inset-0 bg-on-surface/0 group-hover:bg-on-surface/5 transition-colors duration-500"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline mb-1 group-hover:italic transition-all">Ethereal Passage</h3>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline">Lucia Vane, 2023</p>
+<p class="text-[10px] font-label tracking-[0.15em] uppercase text-outline-variant mt-1">Watercolor and Gouache on Arches</p>
+</div>
+<div class="text-right">
+<p class="text-sm font-label font-medium">$1,450</p>
+<p class="text-[9px] font-label tracking-widest uppercase text-outline-variant mt-1">Reserved</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Pagination / View More -->
+<section class="mb-32 px-12 flex justify-center">
+<button class="px-16 py-5 border border-outline-variant/30 text-[11px] font-label tracking-[0.2em] uppercase hover:bg-on-surface hover:text-surface transition-all duration-300">
+            Discover More Works
+        </button>
+</section>
+<!-- Newsletter Tonal Shift -->
+<section class="bg-surface-container-low py-32 px-12">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-4xl font-headline mb-8">Curated Updates</h2>
+<p class="text-sm text-on-surface-variant font-body mb-12 leading-relaxed max-w-lg mx-auto">
+                Join our private mailing list to receive early access to new collections, artist interviews, and exhibition previews.
+            </p>
+<form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+<input class="flex-grow bg-transparent border-0 border-b border-outline-variant/30 focus:ring-0 focus:border-primary text-[11px] font-label tracking-widest placeholder:text-outline-variant" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-3 text-[10px] font-label tracking-[0.2em] uppercase hover:bg-primary-dim transition-colors">
+                    Subscribe
+                </button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#f3f4f1] dark:bg-stone-950 w-full mt-24 border-t border-[#afb3b0]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full max-w-[1920px] mx-auto">
+<div class="font-noto-serif text-lg text-[#2f3331] dark:text-stone-200 mb-8 md:mb-0">
+                The Curated Perspective
+            </div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-all" href="#">Terms of Service</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-all" href="#">Shipping &amp; Returns</a>
+<a class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#777c79] hover:text-[#5f5e5e] underline-offset-4 hover:underline transition-all" href="#">Contact</a>
+</div>
+<div class="font-manrope text-[11px] tracking-[0.1em] uppercase text-[#5f5e5e] dark:text-stone-400">
+                © 2024 The Curated Perspective. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
