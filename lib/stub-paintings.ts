@@ -1,0 +1,63 @@
+import type { Painting } from "./types";
+
+export const STUB_PAINTINGS: Painting[] = [
+  {
+    id: "stub-001",
+    slug: "morning-lotus",
+    title: "Morning Lotus",
+    description:
+      "Oil on canvas. A study of light filtering through lotus petals at dawn. Inspired by the ponds of Hue.",
+    year: 2024,
+    medium: "Oil on canvas",
+    dimensions: "60 x 80 cm",
+    imageDriveId: "stub",
+    imageUrl: "https://placehold.co/1200x1500/e9d5b9/0a0a0a?text=Morning+Lotus",
+    status: "available",
+    featured: true,
+    order: 1,
+  },
+  {
+    id: "stub-002",
+    slug: "river-evening",
+    title: "River, Evening",
+    description:
+      "Watercolour on paper. The Perfume River as twilight settles over the old citadel.",
+    year: 2023,
+    medium: "Watercolour on paper",
+    dimensions: "40 x 60 cm",
+    imageDriveId: "stub",
+    imageUrl: "https://placehold.co/1200x900/c8b6a6/0a0a0a?text=River%2C+Evening",
+    status: "sold",
+    featured: true,
+    order: 2,
+  },
+  {
+    id: "stub-003",
+    slug: "still-life-with-mango",
+    title: "Still Life with Mango",
+    description:
+      "Acrylic on canvas. A quiet table study, exploring colour balance and shadow.",
+    year: 2024,
+    medium: "Acrylic on canvas",
+    dimensions: "50 x 50 cm",
+    imageDriveId: "stub",
+    imageUrl: "https://placehold.co/1200x1200/d9b48f/0a0a0a?text=Still+Life",
+    status: "available",
+    featured: true,
+    order: 3,
+  },
+  {
+    id: "stub-004",
+    slug: "studio-window",
+    title: "Studio Window",
+    description: "Oil on canvas. Afternoon light in the studio.",
+    year: 2024,
+    medium: "Oil on canvas",
+    dimensions: "70 x 90 cm",
+    imageDriveId: "stub",
+    imageUrl: "https://placehold.co/1200x1500/b8a890/0a0a0a?text=Studio+Window",
+    status: "available",
+    featured: false,
+    order: 4,
+  },
+];
