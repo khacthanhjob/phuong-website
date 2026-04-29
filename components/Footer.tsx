@@ -13,6 +13,12 @@ export async function Footer() {
 
         <div className="flex flex-wrap justify-center gap-8 font-label text-[11px] tracking-[0.1em] uppercase text-outline">
           <Link
+            href="/collections"
+            className="hover:text-on-surface underline-offset-4 hover:underline transition-all"
+          >
+            Collections
+          </Link>
+          <Link
             href="/paintings"
             className="hover:text-on-surface underline-offset-4 hover:underline transition-all"
           >

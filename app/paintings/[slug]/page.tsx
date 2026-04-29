@@ -44,7 +44,16 @@ export default async function PaintingDetailPage({
   if (!painting) notFound();
 
   const all = await getAllPaintings();
-  const related = all.filter((p) => p.id !== painting.id).slice(0, 4);
+  const sameCollection = painting.collectionSlug
+    ? all.filter(
+        (p) =>
+          p.id !== painting.id && p.collectionSlug === painting.collectionSlug,
+      )
+    : [];
+  const related =
+    sameCollection.length > 0
+      ? sameCollection.slice(0, 4)
+      : all.filter((p) => p.id !== painting.id).slice(0, 4);
 
   const subject = encodeURIComponent(`Inquiry: ${painting.title}`);
   const body = encodeURIComponent(
@@ -56,13 +65,31 @@ export default async function PaintingDetailPage({
     <>
       {/* Breadcrumb */}
       <div className="max-w-[1920px] mx-auto px-6 md:px-12 py-4">
-        <nav className="flex items-center gap-4">
-          <Link
-            href="/paintings"
-            className="font-label text-[11px] tracking-[0.1em] uppercase text-outline hover:text-on-surface transition-colors"
-          >
-            Gallery
-          </Link>
+        <nav className="flex items-center gap-4 flex-wrap">
+          {painting.collectionSlug && painting.collectionName ? (
+            <>
+              <Link
+                href="/collections"
+                className="font-label text-[11px] tracking-[0.1em] uppercase text-outline hover:text-on-surface transition-colors"
+              >
+                Collections
+              </Link>
+              <div className="w-8 h-[1px] bg-outline-variant opacity-15" />
+              <Link
+                href={`/collections/${painting.collectionSlug}`}
+                className="font-label text-[11px] tracking-[0.1em] uppercase text-outline hover:text-on-surface transition-colors"
+              >
+                {painting.collectionName}
+              </Link>
+            </>
+          ) : (
+            <Link
+              href="/paintings"
+              className="font-label text-[11px] tracking-[0.1em] uppercase text-outline hover:text-on-surface transition-colors"
+            >
+              Gallery
+            </Link>
+          )}
           <div className="w-8 h-[1px] bg-outline-variant opacity-15" />
           <span className="font-label text-[11px] tracking-[0.1em] uppercase text-on-surface">
             {painting.title}
@@ -173,17 +200,27 @@ export default async function PaintingDetailPage({
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 mb-12">
             <div>
               <span className="font-label text-[11px] tracking-[0.2em] uppercase text-outline mb-2 block">
-                Related Works
+                {sameCollection.length > 0
+                  ? `More from ${painting.collectionName}`
+                  : "Related Works"}
               </span>
               <h2 className="font-headline text-4xl text-on-surface">
-                From the Studio
+                {sameCollection.length > 0
+                  ? "Continue the Series"
+                  : "From the Studio"}
               </h2>
             </div>
             <Link
-              href="/paintings"
+              href={
+                sameCollection.length > 0 && painting.collectionSlug
+                  ? `/collections/${painting.collectionSlug}`
+                  : "/paintings"
+              }
               className="font-label text-[11px] tracking-[0.2em] uppercase text-on-surface border-b border-on-surface pb-1 self-start sm:self-end hover:text-tertiary hover:border-tertiary transition-colors"
             >
-              Back to Gallery
+              {sameCollection.length > 0
+                ? "View Full Collection"
+                : "Back to Gallery"}
             </Link>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">

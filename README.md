@@ -39,8 +39,11 @@ Create a new Google Sheet with a tab named `paintings` and these column headers 
 | `status` | no | `available` | One of: `available`, `sold`, `reserved` (default `available`) |
 | `featured` | no | `TRUE` | `TRUE` to show on Home page |
 | `order` | no | `1` | Lower numbers appear first; ties broken alphabetically |
+| `collection` | no | `Quiet Realism` | Free-text series name. Paintings sharing the same value group into a collection page (e.g. `/collections/quiet-realism`). Leave blank to keep a painting unfiled |
 
 Add one row per painting.
+
+Tip: collections are derived automatically from this column — type the same name (e.g. `Quiet Realism`) on every row that belongs to that series and the site will build a `/collections/quiet-realism` page showing them all. To rename a collection, find-replace the name across all rows.
 
 ### 2. Upload images to Drive
 

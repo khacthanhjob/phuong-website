@@ -13,4 +13,15 @@ export type Painting = {
   status: PaintingStatus;
   featured: boolean;
   order: number;
+  collectionName?: string;
+  collectionSlug?: string;
+};
+
+export type Collection = {
+  slug: string;
+  name: string;
+  paintingCount: number;
+  coverImageUrl: string;
+  earliestYear: number;
+  latestYear: number;
 };

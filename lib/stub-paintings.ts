@@ -1,6 +1,7 @@
+import { slugify } from "./slug";
 import type { Painting } from "./types";
 
-export const STUB_PAINTINGS: Painting[] = [
+const RAW: Array<Omit<Painting, "collectionSlug">> = [
   {
     id: "stub-001",
     slug: "morning-lotus",
@@ -15,6 +16,7 @@ export const STUB_PAINTINGS: Painting[] = [
     status: "available",
     featured: true,
     order: 1,
+    collectionName: "Quiet Realism",
   },
   {
     id: "stub-002",
@@ -30,6 +32,7 @@ export const STUB_PAINTINGS: Painting[] = [
     status: "sold",
     featured: true,
     order: 2,
+    collectionName: "Watercolour Sketches",
   },
   {
     id: "stub-003",
@@ -45,6 +48,7 @@ export const STUB_PAINTINGS: Painting[] = [
     status: "available",
     featured: true,
     order: 3,
+    collectionName: "Quiet Realism",
   },
   {
     id: "stub-004",
@@ -59,5 +63,75 @@ export const STUB_PAINTINGS: Painting[] = [
     status: "available",
     featured: false,
     order: 4,
+    collectionName: "Quiet Realism",
+  },
+  {
+    id: "stub-005",
+    slug: "lotus-pond-at-noon",
+    title: "Lotus Pond at Noon",
+    description:
+      "Watercolour on paper. Reflections rippling under the heat of midday.",
+    year: 2024,
+    medium: "Watercolour on paper",
+    dimensions: "30 x 40 cm",
+    imageDriveId: "stub",
+    imageUrl: "https://placehold.co/1200x900/dcd0bf/0a0a0a.png?text=Lotus+Pond",
+    status: "available",
+    featured: false,
+    order: 5,
+    collectionName: "Watercolour Sketches",
+  },
+  {
+    id: "stub-006",
+    slug: "brass-doorway",
+    title: "Brass Doorway",
+    description:
+      "Oil on linen. Detail study of a worn brass handle against deep wood grain.",
+    year: 2023,
+    medium: "Oil on linen",
+    dimensions: "40 x 50 cm",
+    imageDriveId: "stub",
+    imageUrl: "https://placehold.co/1200x1500/a89478/faf7f6.png?text=Brass+Doorway",
+    status: "available",
+    featured: true,
+    order: 6,
+    collectionName: "Architectural Studies",
+  },
+  {
+    id: "stub-007",
+    slug: "stone-steps",
+    title: "Stone Steps",
+    description:
+      "Oil on canvas. Worn limestone steps, late afternoon shadow falling across them.",
+    year: 2023,
+    medium: "Oil on canvas",
+    dimensions: "55 x 70 cm",
+    imageDriveId: "stub",
+    imageUrl: "https://placehold.co/1200x1500/8d8a82/faf7f6.png?text=Stone+Steps",
+    status: "reserved",
+    featured: false,
+    order: 7,
+    collectionName: "Architectural Studies",
+  },
+  {
+    id: "stub-008",
+    slug: "window-into-stillness",
+    title: "Window into Stillness",
+    description:
+      "Oil on canvas. A high arched window, its frame a study in vertical light.",
+    year: 2025,
+    medium: "Oil on canvas",
+    dimensions: "80 x 110 cm",
+    imageDriveId: "stub",
+    imageUrl: "https://placehold.co/1200x1500/c1b8a8/0a0a0a.png?text=Window+Into+Stillness",
+    status: "available",
+    featured: true,
+    order: 8,
+    collectionName: "Architectural Studies",
   },
 ];
+
+export const STUB_PAINTINGS: Painting[] = RAW.map((p) => ({
+  ...p,
+  collectionSlug: p.collectionName ? slugify(p.collectionName) : undefined,
+}));

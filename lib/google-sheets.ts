@@ -5,7 +5,7 @@ import { slugify } from "./slug";
 import { STUB_PAINTINGS } from "./stub-paintings";
 import type { Painting, PaintingStatus } from "./types";
 
-const SHEET_RANGE = "paintings!A:J";
+const SHEET_RANGE = "paintings!A:K";
 const VALID_STATUSES: PaintingStatus[] = ["available", "sold", "reserved"];
 
 function getAuth() {
@@ -60,6 +60,7 @@ export async function fetchPaintings(): Promise<Painting[]> {
   const iStatus = col("status");
   const iFeat = col("featured");
   const iOrder = col("order");
+  const iCollection = col("collection");
 
   const paintings: Painting[] = [];
   for (const row of rows.slice(1)) {
@@ -75,6 +76,11 @@ export async function fetchPaintings(): Promise<Painting[]> {
       ? rawStatus
       : "available";
 
+    const collectionName =
+      iCollection >= 0
+        ? row[iCollection]?.toString().trim() || undefined
+        : undefined;
+
     paintings.push({
       id,
       slug: slugify(title),
@@ -88,6 +94,8 @@ export async function fetchPaintings(): Promise<Painting[]> {
       status,
       featured: String(row[iFeat] ?? "").toLowerCase() === "true",
       order: Number(row[iOrder]) || 0,
+      collectionName,
+      collectionSlug: collectionName ? slugify(collectionName) : undefined,
     });
   }
 
