@@ -1,3 +1,4 @@
+import { assetPath } from "./asset-path";
 import { slugify } from "./slug";
 import type { Painting } from "./types";
 
@@ -133,5 +134,6 @@ const RAW: Array<Omit<Painting, "collectionSlug">> = [
 
 export const STUB_PAINTINGS: Painting[] = RAW.map((p) => ({
   ...p,
+  imageUrl: assetPath(p.imageUrl),
   collectionSlug: p.collectionName ? slugify(p.collectionName) : undefined,
 }));
