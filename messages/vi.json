@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "collections": "Bộ sưu tập",
+    "gallery": "Thư viện tranh",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ"
+  },
+  "footer": {
+    "rights": "Bảo lưu mọi quyền."
+  },
+  "home": {
+    "heroLabel": "Tranh gốc",
+    "heroHeadline": "Tĩnh lặng <italic>trong</italic> chuyển động",
+    "viewGallery": "Xem tranh",
+    "theArtist": "Về họa sĩ",
+    "bioHeading": "Bàn tay đằng sau những bức tranh",
+    "bioParagraph1": "Với Phượng, nghệ thuật không có ranh giới. Nó chảy từ những ý niệm trên giá vẽ, len lỏi vào không gian ta đang sống, và khoác lên chính con người ta mỗi ngày. Hội họa là ngôn ngữ chính của cô — cách ghi lại cảm xúc trước khi nó phôi pha.",
+    "bioParagraph2": "Cô bắt đầu từ những quan sát — một vệt sáng, hình học của một căn phòng quen thuộc, khoảnh khắc đứng yên trước khi mọi thứ thay đổi. Mỗi tác phẩm được xây dựng qua quá trình chỉnh sửa kiên nhẫn, vật liệu được lựa chọn kỹ lưỡng để sống lâu dài trên bức tường.",
+    "readMore": "Đọc thêm",
+    "selectedWorksLabel": "Tác phẩm tiêu biểu",
+    "fromTheStudio": "Từ xưởng vẽ",
+    "browseAll": "Xem tất cả",
+    "noFeatured": "Chưa có tác phẩm nổi bật.",
+    "aboutQuote": "Hội họa là kiến trúc của sự tĩnh lặng.",
+    "ctaHeading": "Bắt đầu bộ sưu tập của bạn",
+    "inquireAbout": "Hỏi về tác phẩm"
+  },
+  "about": {
+    "label": "Giới thiệu",
+    "heading": "Bàn tay đằng sau",
+    "headingItalic": "những",
+    "headingEnd": "bức tranh",
+    "quote": "Hội họa là kiến trúc của sự tĩnh lặng.",
+    "portraitLabel": "Chân dung",
+    "bioParagraph1": "Với Phượng, nghệ thuật không có ranh giới. Nó chảy từ những ý niệm trên giá vẽ, len lỏi vào không gian ta đang sống, và khoác lên chính con người ta mỗi ngày. Hội họa là ngôn ngữ chính của cô — cách ghi lại cảm xúc trước khi nó phôi pha.",
+    "bioParagraph2": "Cô làm việc với sơn dầu trên toan và màu nước trên giấy cotton, bị thu hút bởi sự trong trẻo của màu nước và sức mạnh thô ráp của sơn dầu. Mỗi bộ tranh sinh ra từ những quan sát tỉ mỉ — chất lượng của ánh sáng, hình học ẩn giấu trong những căn phòng quen thuộc, khoảnh khắc đứng yên trước khi điều gì đó thay đổi.",
+    "exhibitionsCount": "15+",
+    "exhibitionsLabel": "Triển lãm",
+    "privateWorksCount": "200",
+    "privateWorksLabel": "Tác phẩm cá nhân",
+    "statementLabel": "Tuyên ngôn nghệ thuật",
+    "statementQuote": "Đây là thế giới nội tâm của tôi, được kể bằng màu nước, sơn dầu và chì than. Mỗi bức tranh là một lát cắt của cảm xúc, một khoảnh khắc đã được ghi lại để không bao giờ phôi pha. Mời bạn bước vào, lặng ngắm và cảm nhận."
+  },
+  "contact": {
+    "label": "Liên hệ",
+    "heading": "Một cuộc trò chuyện",
+    "headingItalic": "nhẹ nhàng",
+    "intro": "Để hỏi về các tác phẩm sẵn có, đặt tranh theo yêu cầu, hoặc ghé thăm xưởng vẽ — hãy liên hệ qua một trong các kênh dưới đây.",
+    "emailLabel": "Email",
+    "phoneLabel": "Điện thoại",
+    "instagramLabel": "Instagram",
+    "studioLabel": "Xưởng vẽ"
+  },
+  "gallery": {
+    "breadcrumbLabel": "Thư viện tranh",
+    "breadcrumbAll": "Tất cả tác phẩm",
+    "heading": "Bộ sưu",
+    "headingItalic": "tập tranh",
+    "totalWorksLabel": "Tổng số tác phẩm",
+    "noWorks": "Chưa có tranh nào."
+  },
+  "collections": {
+    "label": "Bộ sưu tập",
+    "heading": "Những",
+    "headingItalic": "bộ sưu tập",
+    "tagline": "Hành trình qua những chuỗi và chủ đề không ngừng phát triển từ một bàn tay.",
+    "noCollections": "Chưa có bộ sưu tập nào.",
+    "worksLabel": "Tác phẩm",
+    "workLabel": "Tác phẩm",
+    "explore": "Khám phá toàn bộ chuỗi.",
+    "inquiryLabel": "Hỏi & Mua tranh",
+    "inquiryHeading": "Mỗi tác phẩm kể một <italic>câu chuyện</italic> riêng.",
+    "inquiryBody": "Mỗi tác phẩm đều đến từ một bàn tay, nhưng mỗi chuỗi mang những băn khoăn riêng. Duyệt toàn bộ danh mục hoặc liên hệ về một tác phẩm cụ thể.",
+    "getInTouch": "Liên hệ ngay"
+  },
+  "collectionDetail": {
+    "breadcrumbParent": "Bộ sưu tập",
+    "worksLabel": "Tác phẩm",
+    "workLabel": "Tác phẩm",
+    "noWorks": "Chưa có tác phẩm trong bộ sưu tập này."
+  },
+  "paintingCard": {
+    "available": "Còn hàng",
+    "sold": "Đã thuộc BST cá nhân",
+    "reserved": "Đã đặt trước"
+  },
+  "paintingDetail": {
+    "breadcrumbGallery": "Thư viện tranh",
+    "breadcrumbCollections": "Bộ sưu tập",
+    "mediumLabel": "Chất liệu",
+    "dimensionsLabel": "Kích thước",
+    "yearLabel": "Năm",
+    "statusLabel": "Tình trạng",
+    "statusAvailable": "Có thể mua",
+    "statusSold": "Đã thuộc bộ sưu tập cá nhân",
+    "statusReserved": "Đã đặt trước",
+    "theWorkLabel": "Về tác phẩm",
+    "inquireButton": "Hỏi về tác phẩm",
+    "moreFrom": "Thêm từ",
+    "relatedWorksLabel": "Tác phẩm liên quan",
+    "continueSeriesHeading": "Tiếp tục chuỗi tranh",
+    "fromStudioHeading": "Từ xưởng vẽ",
+    "viewFullCollection": "Xem toàn bộ bộ sưu tập",
+    "backToGallery": "Trở về thư viện tranh"
+  }
+}

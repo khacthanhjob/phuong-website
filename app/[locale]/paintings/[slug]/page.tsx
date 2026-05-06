@@ -1,23 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { PaintingCard } from "@/components/PaintingCard";
-import {
-  getAllPaintings,
-  getAllSlugs,
-  getPaintingBySlug,
-} from "@/lib/paintings";
+import { getAllPaintings, getAllSlugs, getPaintingBySlug } from "@/lib/paintings";
 
 const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@example.com";
 
-type Params = Promise<{ slug: string }>;
-
-const STATUS_LABEL: Record<string, string> = {
-  available: "Available for Acquisition",
-  sold: "In Private Collection",
-  reserved: "Reserved",
-};
+type Params = Promise<{ locale: string; slug: string }>;
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();
@@ -28,27 +19,18 @@ export async function generateMetadata({ params }: { params: Params }) {
   const { slug } = await params;
   const painting = await getPaintingBySlug(slug);
   if (!painting) return { title: "Not found" };
-  return {
-    title: painting.title,
-    description: painting.description,
-  };
+  return { title: painting.title, description: painting.description };
 }
 
-export default async function PaintingDetailPage({
-  params,
-}: {
-  params: Params;
-}) {
-  const { slug } = await params;
+export default async function PaintingDetailPage({ params }: { params: Params }) {
+  const { locale, slug } = await params;
   const painting = await getPaintingBySlug(slug);
   if (!painting) notFound();
 
+  const t = await getTranslations({ locale, namespace: "paintingDetail" });
   const all = await getAllPaintings();
   const sameCollection = painting.collectionSlug
-    ? all.filter(
-        (p) =>
-          p.id !== painting.id && p.collectionSlug === painting.collectionSlug,
-      )
+    ? all.filter((p) => p.id !== painting.id && p.collectionSlug === painting.collectionSlug)
     : [];
   const related =
     sameCollection.length > 0
@@ -57,9 +39,15 @@ export default async function PaintingDetailPage({
 
   const subject = encodeURIComponent(`Inquiry: ${painting.title}`);
   const body = encodeURIComponent(
-    `Hi Phượng,\n\nI'm interested in "${painting.title}" (${painting.year}).\n\n— `,
+    `Hi Phượng,\n\nI'm interested in "${painting.title}" (${painting.year}).\n\n— `
   );
   const mailto = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+  const STATUS_LABEL: Record<string, string> = {
+    available: t("statusAvailable"),
+    sold: t("statusSold"),
+    reserved: t("statusReserved"),
+  };
 
   return (
     <>
@@ -72,7 +60,7 @@ export default async function PaintingDetailPage({
                 href="/collections"
                 className="font-label text-[11px] tracking-[0.1em] uppercase text-outline hover:text-on-surface transition-colors"
               >
-                Collections
+                {t("breadcrumbCollections")}
               </Link>
               <div className="w-8 h-[1px] bg-outline-variant opacity-15" />
               <Link
@@ -87,7 +75,7 @@ export default async function PaintingDetailPage({
               href="/paintings"
               className="font-label text-[11px] tracking-[0.1em] uppercase text-outline hover:text-on-surface transition-colors"
             >
-              Gallery
+              {t("breadcrumbGallery")}
             </Link>
           )}
           <div className="w-8 h-[1px] bg-outline-variant opacity-15" />
@@ -99,7 +87,6 @@ export default async function PaintingDetailPage({
 
       {/* Detail Grid */}
       <section className="max-w-[1920px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-24 items-start">
-        {/* Image */}
         <div className="lg:col-span-7 group">
           <div className="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
             <Image
@@ -113,7 +100,6 @@ export default async function PaintingDetailPage({
           </div>
         </div>
 
-        {/* Content */}
         <div className="lg:col-span-5 flex flex-col gap-10">
           <div>
             <h1 className="font-headline text-5xl lg:text-7xl leading-tight tracking-tight text-on-surface">
@@ -126,40 +112,32 @@ export default async function PaintingDetailPage({
             {painting.medium && (
               <div className="flex justify-between items-baseline gap-4">
                 <span className="font-label text-[11px] tracking-[0.15em] uppercase text-outline">
-                  Medium
+                  {t("mediumLabel")}
                 </span>
-                <span className="font-body text-sm font-light text-right">
-                  {painting.medium}
-                </span>
+                <span className="font-body text-sm font-light text-right">{painting.medium}</span>
               </div>
             )}
             {painting.dimensions && (
               <div className="flex justify-between items-baseline gap-4">
                 <span className="font-label text-[11px] tracking-[0.15em] uppercase text-outline">
-                  Dimensions
+                  {t("dimensionsLabel")}
                 </span>
-                <span className="font-body text-sm font-light text-right">
-                  {painting.dimensions}
-                </span>
+                <span className="font-body text-sm font-light text-right">{painting.dimensions}</span>
               </div>
             )}
             <div className="flex justify-between items-baseline gap-4">
               <span className="font-label text-[11px] tracking-[0.15em] uppercase text-outline">
-                Year
+                {t("yearLabel")}
               </span>
-              <span className="font-body text-sm font-light text-right">
-                {painting.year}
-              </span>
+              <span className="font-body text-sm font-light text-right">{painting.year}</span>
             </div>
             <div className="flex justify-between items-baseline pt-4 gap-4">
               <span className="font-label text-[11px] tracking-[0.15em] uppercase text-outline">
-                Status
+                {t("statusLabel")}
               </span>
               <span
                 className={`font-body text-sm font-medium text-right ${
-                  painting.status === "available"
-                    ? "text-tertiary"
-                    : "text-on-surface-variant"
+                  painting.status === "available" ? "text-tertiary" : "text-on-surface-variant"
                 }`}
               >
                 {STATUS_LABEL[painting.status]}
@@ -171,7 +149,7 @@ export default async function PaintingDetailPage({
           {painting.description && (
             <div className="space-y-4">
               <span className="font-label text-[11px] tracking-[0.15em] uppercase text-on-surface">
-                The Work
+                {t("theWorkLabel")}
               </span>
               <p className="font-body text-base leading-relaxed font-light text-on-surface-variant whitespace-pre-line">
                 {painting.description}
@@ -186,7 +164,7 @@ export default async function PaintingDetailPage({
                 href={mailto}
                 className="bg-primary text-on-primary font-label text-sm tracking-[0.2em] uppercase py-5 px-10 flex items-center justify-center gap-4 transition-all hover:bg-primary-dim active:scale-[0.98]"
               >
-                Inquire about Work
+                {t("inquireButton")}
                 <span aria-hidden>→</span>
               </a>
             </div>
@@ -201,13 +179,11 @@ export default async function PaintingDetailPage({
             <div>
               <span className="font-label text-[11px] tracking-[0.2em] uppercase text-outline mb-2 block">
                 {sameCollection.length > 0
-                  ? `More from ${painting.collectionName}`
-                  : "Related Works"}
+                  ? `${t("moreFrom")} ${painting.collectionName}`
+                  : t("relatedWorksLabel")}
               </span>
               <h2 className="font-headline text-4xl text-on-surface">
-                {sameCollection.length > 0
-                  ? "Continue the Series"
-                  : "From the Studio"}
+                {sameCollection.length > 0 ? t("continueSeriesHeading") : t("fromStudioHeading")}
               </h2>
             </div>
             <Link
@@ -218,14 +194,12 @@ export default async function PaintingDetailPage({
               }
               className="font-label text-[11px] tracking-[0.2em] uppercase text-on-surface border-b border-on-surface pb-1 self-start sm:self-end hover:text-tertiary hover:border-tertiary transition-colors"
             >
-              {sameCollection.length > 0
-                ? "View Full Collection"
-                : "Back to Gallery"}
+              {sameCollection.length > 0 ? t("viewFullCollection") : t("backToGallery")}
             </Link>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
             {related.map((p) => (
-              <PaintingCard key={p.id} painting={p} aspect="aspect-[3/4]" />
+              <PaintingCard key={p.id} painting={p} aspect="aspect-[3/4]" locale={locale} />
             ))}
           </div>
         </section>

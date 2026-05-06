@@ -1,13 +1,10 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { PaintingCard } from "@/components/PaintingCard";
-import {
-  getAllCollectionSlugs,
-  getCollectionBySlug,
-  getPaintingsByCollection,
-} from "@/lib/paintings";
+import { getAllCollectionSlugs, getCollectionBySlug, getPaintingsByCollection } from "@/lib/paintings";
 
-type Params = Promise<{ slug: string }>;
+type Params = Promise<{ locale: string; slug: string }>;
 
 export async function generateStaticParams() {
   const slugs = await getAllCollectionSlugs();
@@ -15,29 +12,26 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: Params }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const collection = await getCollectionBySlug(slug);
   if (!collection) return { title: "Not found" };
+  const t = await getTranslations({ locale, namespace: "collectionDetail" });
   return {
     title: collection.name,
-    description: `${collection.paintingCount} works in the ${collection.name} series.`,
+    description: `${collection.paintingCount} ${t("worksLabel")} — ${collection.name}`,
   };
 }
 
-export default async function CollectionDetailPage({
-  params,
-}: {
-  params: Params;
-}) {
-  const { slug } = await params;
+export default async function CollectionDetailPage({ params }: { params: Params }) {
+  const { locale, slug } = await params;
   const collection = await getCollectionBySlug(slug);
   if (!collection) notFound();
 
+  const t = await getTranslations({ locale, namespace: "collectionDetail" });
   const paintings = await getPaintingsByCollection(slug);
 
   return (
     <>
-      {/* Hero / Collection Header */}
       <header className="pt-12 md:pt-24 pb-16 md:pb-24 px-6 md:px-12 max-w-[1920px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-3xl">
@@ -46,7 +40,7 @@ export default async function CollectionDetailPage({
                 href="/collections"
                 className="text-[10px] font-label tracking-[0.2em] uppercase text-outline hover:text-on-surface transition-colors"
               >
-                Collections
+                {t("breadcrumbParent")}
               </Link>
               <div className="h-[1px] w-8 bg-outline-variant opacity-30" />
               <span className="text-[10px] font-label tracking-[0.2em] uppercase text-on-surface">
@@ -68,34 +62,25 @@ export default async function CollectionDetailPage({
           </div>
           <div className="md:text-right">
             <p className="text-sm font-label tracking-[0.1em] uppercase text-outline mb-2">
-              {collection.paintingCount === 1 ? "Work" : "Works"}
+              {collection.paintingCount === 1 ? t("workLabel") : t("worksLabel")}
             </p>
-            <p className="text-3xl font-headline italic">
-              {collection.paintingCount}
-            </p>
+            <p className="text-3xl font-headline italic">{collection.paintingCount}</p>
           </div>
         </div>
         <div className="mt-12 w-full h-[1px] bg-outline-variant opacity-15" />
       </header>
 
-      {/* Paintings Grid */}
       <main className="px-6 md:px-12 max-w-[1920px] mx-auto mb-24 md:mb-32">
         {paintings.length === 0 ? (
-          <p className="font-body text-on-surface-variant text-center py-24">
-            No paintings in this collection yet.
-          </p>
+          <p className="font-body text-on-surface-variant text-center py-24">{t("noWorks")}</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24">
             {paintings.map((painting, i) => {
               const stagger =
-                i % 5 === 4
-                  ? "lg:mt-24"
-                  : i % 3 === 1
-                    ? "lg:mt-12"
-                    : "";
+                i % 5 === 4 ? "lg:mt-24" : i % 3 === 1 ? "lg:mt-12" : "";
               return (
                 <div key={painting.id} className={stagger}>
-                  <PaintingCard painting={painting} />
+                  <PaintingCard painting={painting} locale={locale} />
                 </div>
               );
             })}

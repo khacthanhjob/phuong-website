@@ -1,10 +1,12 @@
-import Link from "next/link";
-import { cacheLife } from "next/cache";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
-export async function Footer() {
-  "use cache";
-  cacheLife("days");
-  const year = new Date().getFullYear();
+const CURRENT_YEAR = new Date().getFullYear();
+
+export async function Footer({ locale }: { locale: string }) {
+  const year = CURRENT_YEAR;
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+  const tFooter = await getTranslations({ locale, namespace: "footer" });
 
   return (
     <footer className="bg-surface-container-low w-full mt-24">
@@ -16,30 +18,30 @@ export async function Footer() {
             href="/collections"
             className="hover:text-on-surface underline-offset-4 hover:underline transition-all"
           >
-            Collections
+            {tNav("collections")}
           </Link>
           <Link
             href="/paintings"
             className="hover:text-on-surface underline-offset-4 hover:underline transition-all"
           >
-            Gallery
+            {tNav("gallery")}
           </Link>
           <Link
             href="/about"
             className="hover:text-on-surface underline-offset-4 hover:underline transition-all"
           >
-            About
+            {tNav("about")}
           </Link>
           <Link
             href="/contact"
             className="hover:text-on-surface underline-offset-4 hover:underline transition-all"
           >
-            Contact
+            {tNav("contact")}
           </Link>
         </div>
 
         <div className="font-label text-[11px] tracking-[0.1em] uppercase text-on-surface-variant">
-          © {year} Phượng. All rights reserved.
+          © {year} Phượng. {tFooter("rights")}
         </div>
       </div>
     </footer>

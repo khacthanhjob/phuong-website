@@ -1,13 +1,17 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const NAV = [
-  { href: "/collections", label: "Collections" },
-  { href: "/paintings", label: "Gallery" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+export async function Header({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "nav" });
 
-export function Header() {
+  const NAV = [
+    { href: "/collections" as const, label: t("collections") },
+    { href: "/paintings" as const, label: t("gallery") },
+    { href: "/about" as const, label: t("about") },
+    { href: "/contact" as const, label: t("contact") },
+  ];
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md">
       <div className="flex justify-between items-center px-6 md:px-12 py-6 w-full max-w-[1920px] mx-auto">
@@ -17,7 +21,7 @@ export function Header() {
         >
           Phượng
         </Link>
-        <div className="hidden md:flex items-center gap-12 font-headline tracking-widest uppercase text-xs">
+        <div className="hidden md:flex items-center gap-10 font-headline tracking-widest uppercase text-xs">
           {NAV.map((item) => (
             <Link
               key={item.href}
@@ -27,6 +31,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <LanguageSwitcher />
         </div>
         <div className="md:hidden flex items-center gap-2 font-label tracking-widest uppercase text-[10px]">
           {NAV.map((item) => (
@@ -38,6 +43,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

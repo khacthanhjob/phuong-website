@@ -1,12 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import type { Painting } from "@/lib/types";
-
-const STATUS_LABEL: Record<Painting["status"], string> = {
-  available: "Available",
-  sold: "In Private Collection",
-  reserved: "Reserved",
-};
 
 const STATUS_TONE: Record<Painting["status"], string> = {
   available: "text-tertiary",
@@ -14,13 +9,17 @@ const STATUS_TONE: Record<Painting["status"], string> = {
   reserved: "text-outline-variant",
 };
 
-export function PaintingCard({
+export async function PaintingCard({
   painting,
   aspect = "aspect-[4/5]",
+  locale,
 }: {
   painting: Painting;
   aspect?: string;
+  locale: string;
 }) {
+  const t = await getTranslations({ locale, namespace: "paintingCard" });
+
   return (
     <Link
       href={`/paintings/${painting.slug}`}
@@ -52,7 +51,7 @@ export function PaintingCard({
           <p
             className={`text-[10px] font-label tracking-widest uppercase ${STATUS_TONE[painting.status]}`}
           >
-            {STATUS_LABEL[painting.status]}
+            {t(painting.status)}
           </p>
         </div>
       </div>

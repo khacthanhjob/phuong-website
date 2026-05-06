@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "collections": "Collections",
+    "gallery": "Gallery",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "heroLabel": "Original Paintings",
+    "heroHeadline": "Silence <italic>in</italic> Motion",
+    "viewGallery": "View Gallery",
+    "theArtist": "The Artist",
+    "bioHeading": "The Hand Behind the Canvas",
+    "bioParagraph1": "For Phượng, art has no boundaries. It flows from the marks made on canvas — through oil, watercolour, and charcoal — into the spaces we inhabit and the quiet moments of everyday life. Painting is her primary language: a way of recording a feeling before it fades.",
+    "bioParagraph2": "She begins with observation — a cast of light, the geometry of a familiar room, a moment held just before it shifts. Each work is built through patient revision, the materials chosen for how they will live on a wall for years.",
+    "readMore": "Read more",
+    "selectedWorksLabel": "Selected Works",
+    "fromTheStudio": "From the Studio",
+    "browseAll": "Browse All",
+    "noFeatured": "No featured paintings yet.",
+    "aboutQuote": "Painting is the architecture of stillness.",
+    "ctaHeading": "Begin Your Curated Collection",
+    "inquireAbout": "Inquire about Work"
+  },
+  "about": {
+    "label": "About",
+    "heading": "The Hand Behind",
+    "headingItalic": "the",
+    "headingEnd": "Canvas",
+    "quote": "Painting is the architecture of stillness.",
+    "portraitLabel": "Portrait",
+    "bioParagraph1": "For Phượng, art has no boundaries. It flows from the marks made on canvas — through oil, watercolour, and charcoal — into the spaces we inhabit and the quiet moments of everyday life. Painting is her primary language: a way of recording a feeling before it fades.",
+    "bioParagraph2": "She works in oil on canvas and watercolour on cotton paper, drawn to the raw directness of oil and the luminous transparency of watercolour. Each series grows from close observation — a quality of light, the geometry hidden in familiar rooms, a suspended moment before something changes.",
+    "exhibitionsCount": "15+",
+    "exhibitionsLabel": "Exhibitions",
+    "privateWorksCount": "200",
+    "privateWorksLabel": "Private Works",
+    "statementLabel": "Artist Statement",
+    "statementQuote": "I am not painting subjects — I am painting time. Each layer holds a breath, a hesitation, a revision. What I hope a viewer finds in front of a finished piece is not a picture, but the stillness I was reaching for when I made it."
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "A Quiet",
+    "headingItalic": "Conversation",
+    "intro": "For inquiries about available work, commissions, or studio visits — please reach out using one of the channels below.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "instagramLabel": "Instagram",
+    "studioLabel": "Studio"
+  },
+  "gallery": {
+    "breadcrumbLabel": "Gallery",
+    "breadcrumbAll": "All Works",
+    "heading": "The",
+    "headingItalic": "Collection",
+    "totalWorksLabel": "Total Works",
+    "noWorks": "No paintings yet."
+  },
+  "collections": {
+    "label": "Collections",
+    "heading": "The",
+    "headingItalic": "Collections",
+    "tagline": "A journey through the evolving series and themes of a single hand.",
+    "noCollections": "No collections yet.",
+    "worksLabel": "Works",
+    "workLabel": "Work",
+    "explore": "Explore the full series.",
+    "inquiryLabel": "Inquiry & Acquisition",
+    "inquiryHeading": "Every piece tells a <italic>singular</italic> story.",
+    "inquiryBody": "Each work originates from the same hand, yet every series carries its own concerns. Browse the full catalogue or get in touch about a specific piece.",
+    "getInTouch": "Get in Touch"
+  },
+  "collectionDetail": {
+    "breadcrumbParent": "Collections",
+    "worksLabel": "Works",
+    "workLabel": "Work",
+    "noWorks": "No paintings in this collection yet."
+  },
+  "paintingCard": {
+    "available": "Available",
+    "sold": "In Private Collection",
+    "reserved": "Reserved"
+  },
+  "paintingDetail": {
+    "breadcrumbGallery": "Gallery",
+    "breadcrumbCollections": "Collections",
+    "mediumLabel": "Medium",
+    "dimensionsLabel": "Dimensions",
+    "yearLabel": "Year",
+    "statusLabel": "Status",
+    "statusAvailable": "Available for Acquisition",
+    "statusSold": "In Private Collection",
+    "statusReserved": "Reserved",
+    "theWorkLabel": "The Work",
+    "inquireButton": "Inquire about Work",
+    "moreFrom": "More from",
+    "relatedWorksLabel": "Related Works",
+    "continueSeriesHeading": "Continue the Series",
+    "fromStudioHeading": "From the Studio",
+    "viewFullCollection": "View Full Collection",
+    "backToGallery": "Back to Gallery"
+  }
+}
