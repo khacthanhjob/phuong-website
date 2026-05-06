@@ -1,9 +1,10 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
 export async function Footer({ locale }: { locale: string }) {
+  setRequestLocale(locale);
   const year = CURRENT_YEAR;
   const tNav = await getTranslations({ locale, namespace: "nav" });
   const tFooter = await getTranslations({ locale, namespace: "footer" });

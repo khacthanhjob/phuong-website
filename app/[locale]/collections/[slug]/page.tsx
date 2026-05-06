@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { PaintingCard } from "@/components/PaintingCard";
 import { getAllCollectionSlugs, getCollectionBySlug, getPaintingsByCollection } from "@/lib/paintings";
@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Params }) {
 
 export default async function CollectionDetailPage({ params }: { params: Params }) {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   const collection = await getCollectionBySlug(slug);
   if (!collection) notFound();
 

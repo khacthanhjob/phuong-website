@@ -1,8 +1,9 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export async function Header({ locale }: { locale: string }) {
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "nav" });
 
   const NAV = [

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Painting } from "@/lib/types";
 
@@ -18,6 +18,7 @@ export async function PaintingCard({
   aspect?: string;
   locale: string;
 }) {
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "paintingCard" });
 
   return (

@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { Manrope, Noto_Serif } from "next/font/google";
 import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { IntlProviderClient } from "@/components/IntlProviderClient";
 import { routing } from "@/i18n/routing";
 import { Footer } from "@/components/Footer";
@@ -41,6 +41,7 @@ export function generateStaticParams() {
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale);
 
   const messages = await getMessages({ locale });
 

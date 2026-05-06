@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { PaintingCard } from "@/components/PaintingCard";
 import { getAllPaintings, getAllSlugs, getPaintingBySlug } from "@/lib/paintings";
@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: Params }) {
 
 export default async function PaintingDetailPage({ params }: { params: Params }) {
   const { locale, slug } = await params;
+  setRequestLocale(locale);
   const painting = await getPaintingBySlug(slug);
   if (!painting) notFound();
 
