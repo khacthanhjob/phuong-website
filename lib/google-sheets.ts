@@ -1,4 +1,5 @@
 import { google } from "googleapis";
+import { cacheLife, cacheTag } from "next/cache";
 import { driveImageUrl } from "./google-drive";
 import { slugify } from "./slug";
 import { STUB_PAINTINGS } from "./stub-paintings";
@@ -23,6 +24,10 @@ function getAuth() {
 }
 
 export async function fetchPaintings(): Promise<Painting[]> {
+  "use cache";
+  cacheLife("hours");
+  cacheTag("paintings");
+
   const sheetId = process.env.GOOGLE_SHEET_ID;
   if (!sheetId) {
     console.warn(
